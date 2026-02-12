@@ -1,23 +1,99 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ANSWERS } from "../constants/answerMap.js";
 import { AnswerTile } from "../components/AnswerGrid.jsx";
+import { roomWsUrl } from "../lib/api.js";
 
 export default function Join() {
   const [joined, setJoined] = useState(false);
   const [locked, setLocked] = useState(false);
+  const [phase, setPhase] = useState("LOBBY"); // LOBBY | QUESTION_ONLY | ANSWERS_OPEN | REVEAL | LEADERBOARD
   const [name, setName] = useState("");
   const [code, setCode] = useState("");
+  const wsRef = useRef(null);
+
+  useEffect(() => {
+    return () => {
+      if (wsRef.current) {
+        try {
+          wsRef.current.close();
+        } catch {
+          // ignore
+        }
+      }
+    };
+  }, []);
 
   const onJoin = (e) => {
     e.preventDefault();
-    if (!name.trim() || !code.trim()) return;
-    setJoined(true);
+    const nm = name.trim();
+    const cd = code.trim().toUpperCase();
+    if (!nm || !cd) return;
+
+    // close any previous socket
+    if (wsRef.current) {
+      try {
+        wsRef.current.close();
+      } catch {
+        // ignore
+      }
+    }
+
+    const socket = new WebSocket(roomWsUrl(cd, "player", nm));
+    wsRef.current = socket;
+
+    socket.onopen = () => {
+  // Tell the server who we are (so it can count us)
+  try {
+    socket.send(JSON.stringify({ type: "HELLO", role: "player", name: nm }));
+  } catch {
+    // ignore
+  }
+
+  setJoined(true);
+  setLocked(false);
+};
+
+    socket.onmessage = (evt) => {
+      try {
+        const msg = JSON.parse(evt.data);
+        if (msg.type === "STATE") {
+          setPhase(msg.state.phase ?? "LOBBY");
+
+          // simple behavior: unlock answers each time answers open
+          if (msg.state.phase === "ANSWERS_OPEN") {
+            setLocked(false);
+          }
+          // lock on reveal (optional)
+          if (msg.state.phase === "REVEAL") {
+            setLocked(true);
+          }
+        }
+      } catch {
+        // ignore
+      }
+    };
+
+    socket.onclose = () => {
+      // Optional: if the socket closes, return to join screen
+      // setJoined(false);
+      console.log("WS closed");
+    };
+
+    socket.onerror = () => {
+      alert("Could not connect to the room. Check the code and try again.");
+    };
   };
 
-  const pick = () => {
+  const pick = (idx) => {
     if (locked) return;
     setLocked(true);
+
+    console.log("picked", idx);
+
     // later: send answer to server
+    // if (wsRef.current?.readyState === 1) {
+    //   wsRef.current.send(JSON.stringify({ type: "ANSWER", idx }));
+    // }
   };
 
   if (!joined) {
@@ -40,7 +116,9 @@ export default function Join() {
               style={styles.input}
               maxLength={20}
             />
-            <button type="submit" style={styles.btn}>Join</button>
+            <button type="submit" style={styles.btn}>
+              Join
+            </button>
           </form>
         </div>
       </div>
@@ -48,41 +126,67 @@ export default function Join() {
   }
 
   return (
-    <div style={styles.phoneWrap}>
-      <div style={styles.phoneTop}>
-        <div style={{ fontWeight: 900 }}>{name}</div>
-        <div style={{ opacity: 0.85, fontWeight: 800 }}>Room {code}</div>
-      </div>
-
-      <div style={styles.grid}>
-        {ANSWERS.map((a) => (
-          <button
-            key={a.idx}
-            onClick={() => pick(a.idx)}
-            disabled={locked}
-            style={styles.tileBtn}
-          >
-            <AnswerTile shape={a.shape} variant="phone" />
-          </button>
-        ))}
-      </div>
-
-      <div style={styles.bottom}>
-        {!locked ? "Tap your answer (color + shape)" : "Answer locked ✅"}
-      </div>
+  <div style={styles.phoneWrap}>
+    <div style={styles.phoneTop}>
+      <div style={{ fontWeight: 900 }}>{name}</div>
+      <div style={{ opacity: 0.85, fontWeight: 800 }}>Room {code}</div>
     </div>
-  );
+
+    {phase === "ANSWERS_OPEN" ? (
+      <>
+        <div style={styles.grid}>
+          {ANSWERS.map((a) => (
+            <button
+              key={a.idx}
+              onClick={() => pick(a.idx)}
+              disabled={locked}
+              style={styles.tileBtn}
+            >
+              <AnswerTile shape={a.shape} variant="phone" />
+            </button>
+          ))}
+        </div>
+
+        <div style={styles.bottom}>
+          {!locked ? "Tap your answer (color + shape)" : "Answer locked ✅"}
+        </div>
+      </>
+    ) : (
+      <div style={styles.waiting}>
+  <div style={styles.waitTitle}>
+    {phase === "LOBBY"
+      ? "Waiting…"
+      : phase === "QUESTION_ONLY"
+      ? "Question is on the screen."
+      : phase === "REVEAL"
+      ? "Answer revealed."
+      : "Waiting…"}
+  </div>
+
+  <div style={styles.waitSub}>
+    {phase === "LOBBY"
+      ? "Host is getting the game ready."
+      : phase === "QUESTION_ONLY"
+      ? "Get ready to answer when the choices appear."
+      : phase === "REVEAL"
+      ? "Watch the screen for the correct answer."
+      : `Phase: ${phase}`}
+  </div>
+</div>
+    )}
+  </div>
+);
 }
 
 const styles = {
   wrap: {
-  minHeight: "100vh",
-  display: "grid",
-  placeItems: "center",
-  background: "#0B1F3A",
-  color: "#F5F7FA",
-  padding: 18,
-},
+    minHeight: "100vh",
+    display: "grid",
+    placeItems: "center",
+    background: "#0B1F3A",
+    color: "#F5F7FA",
+    padding: 18,
+  },
   card: {
     width: "min(460px, 95vw)",
     borderRadius: 18,
@@ -146,4 +250,14 @@ const styles = {
     textAlign: "center",
     paddingBottom: 8,
   },
+  waiting: {
+    flex: 1,
+    display: "grid",
+    placeItems: "center",
+    textAlign: "center",
+    color: "#F5F7FA",
+    padding: 24,
+  },
+  waitTitle: { fontSize: 40, fontWeight: 950 },
+  waitSub: { marginTop: 8, opacity: 0.85, fontWeight: 800, fontSize: 16 },
 };
