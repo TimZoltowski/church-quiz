@@ -1,5 +1,5 @@
 import { createRoom, roomWsUrl } from "../lib/api.js";
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { ANSWERS } from "../constants/answerMap.js";
 import { AnswerTile } from "../components/AnswerGrid.jsx";
 
@@ -14,28 +14,12 @@ export default function Host() {
   const [ws, setWs] = useState(null);
   const [wsStatus, setWsStatus] = useState("disconnected"); // disconnected | connecting | connected
   const [top5, setTop5] = useState([]);
-
-  const sample = useMemo(
-    () => ({
-      question:
-        "What did Jesus tell Nicodemus is necessary to enter the kingdom of God?",
-      choices: [
-        "A person must be born again",
-        "A person must try harder",
-        "A person must be born into the right family",
-        "A person must become more religious",
-      ],
-      correctIndex: 0,
-      top5: [
-        { name: "James", score: 1850 },
-        { name: "Mike", score: 1700 },
-        { name: "Andre", score: 1600 },
-        { name: "Chris", score: 1500 },
-        { name: "Derrick", score: 1400 },
-      ],
-    }),
-    []
-  );
+  const [question, setQuestion] = useState("");
+  const [choices, setChoices] = useState(["", "", "", ""]);
+  const [correctIndex, setCorrectIndex] = useState(0);
+  const [bankIndex, setBankIndex] = useState(0);
+  const [totalQuestions, setTotalQuestions] = useState(0);
+  const [gameOver, setGameOver] = useState(false);
 
   async function startRoom() {
     try {
@@ -70,6 +54,13 @@ export default function Host() {
             setPlayers(msg.state.players ?? []);
             setCounts(Array.isArray(msg.state.counts) ? msg.state.counts : [0, 0, 0, 0]);
             setTop5(Array.isArray(msg.state.top5) ? msg.state.top5 : []);
+            setQuestion(msg.state.question ?? "");
+            setChoices(Array.isArray(msg.state.choices) ? msg.state.choices : ["", "", "", ""]);
+            setCorrectIndex(Number.isInteger(msg.state.correctIndex) ? msg.state.correctIndex : 0);
+            setTop5(Array.isArray(msg.state.top5) ? msg.state.top5 : []);
+            setBankIndex(Number.isInteger(msg.state.bankIndex) ? msg.state.bankIndex : 0);
+            setTotalQuestions(Number.isInteger(msg.state.totalQuestions) ? msg.state.totalQuestions : 0);
+            setGameOver(!!msg.state.gameOver);
 
             // Helpful when debugging counts
             // console.log("STATE:", msg.state);
@@ -96,10 +87,15 @@ export default function Host() {
   }
 
   const nextPhase = () => {
+  if (phase === "LEADERBOARD") {
+    if (gameOver) return; // button is already disabled, but safe
+    send("SET_PHASE", { phase: "QUESTION_ONLY" });
+    return;
+    }
+
     const order = ["LOBBY", "QUESTION_ONLY", "ANSWERS_OPEN", "REVEAL", "LEADERBOARD"];
     const idx = order.indexOf(phase);
-    const next = order[(idx + 1) % order.length];
-    // Don't setPhase here — let the server broadcast STATE back so UI stays in sync.
+    const next = order[idx + 1] || "LOBBY";
     send("SET_PHASE", { phase: next });
   };
 
@@ -112,6 +108,9 @@ export default function Host() {
           Room: <span style={{ letterSpacing: 2 }}>{roomCode || "—"}</span>
           <span style={{ marginLeft: 12, opacity: 0.85 }}>
             Players: {playersCount}
+          </span>
+          <span style={{ marginLeft: 12, opacity: 0.85 }}>
+            Q: {totalQuestions ? bankIndex + 1 : 0}/{totalQuestions || "—"}
           </span>
           <span style={{ marginLeft: 12, opacity: 0.75, fontSize: 14 }}>
             ({wsStatus})
@@ -142,9 +141,21 @@ export default function Host() {
             ))}
           </select>
 
-          <button onClick={nextPhase} style={styles.btn} disabled={!roomCode}>
+          <button
+            onClick={nextPhase}
+            style={styles.btn}
+            disabled={!roomCode || (phase === "LEADERBOARD" && gameOver)}
+          >
             Next
           </button>
+          {phase === "LEADERBOARD" && gameOver && (
+            <button
+              onClick={() => send("RESET_GAME")}
+              style={{ ...styles.btn, background: "#F5F7FA", color: "#0B1F3A" }}
+              disabled={!roomCode}
+            >
+              New Game
+            </button>)}
         </div>
       </div>
 
@@ -184,7 +195,7 @@ export default function Host() {
             </div>
           ) : (
             <>
-              <div style={styles.question}>{sample.question}</div>
+              <div style={styles.question}>{question}</div>
 
               {phase !== "QUESTION_ONLY" && phase !== "LEADERBOARD" && (
                 <>
@@ -196,7 +207,7 @@ export default function Host() {
                     {ANSWERS.map((a) => {
                       const highlight =
                         phase === "REVEAL"
-                          ? a.idx === sample.correctIndex
+                          ? a.idx === correctIndex
                             ? "correct"
                             : "wrong"
                           : "none";
@@ -205,7 +216,7 @@ export default function Host() {
                         <AnswerTile
                           key={a.idx}
                           shape={a.shape}
-                          title={sample.choices[a.idx]}
+                          title={choices[a.idx]}
                           subtitle={a.label}
                           variant="host"
                           highlight={highlight}
@@ -219,7 +230,7 @@ export default function Host() {
 
               {phase === "LEADERBOARD" && (
                 <div style={styles.leaderboard}>
-                  <div style={styles.lbTitle}>Leaderboard (Top 5)</div>
+                 <div style={styles.lbTitle}>{gameOver ? "Final Leaderboard (Top 5)" : "Leaderboard (Top 5)"}</div>
                   <div style={styles.lbList}>
                     {top5.length === 0 ? (
                       <div style={{ opacity: 0.85, fontWeight: 800 }}>No scores yet…</div>
@@ -233,7 +244,9 @@ export default function Host() {
                       ))
                     )}
     </div>
-    <div style={styles.lbHint}>Next: question-only screen again.</div>
+    <div style={styles.lbHint}>
+  {gameOver ? "Game over. Click New Game to restart." : "Next: question-only screen again."}
+</div>
   </div>
 )}
             </>

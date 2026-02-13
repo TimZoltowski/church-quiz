@@ -19,6 +19,24 @@ type Question = {
   correctIndex: number; // 0..3
 };
 
+type BankQuestion = {
+  id: string;
+  prompt: string;
+  choices: string[];
+  correctIndex: number;
+};
+
+type BankFile = {
+  version: number;
+  title: string;
+  questions: BankQuestion[];
+};
+
+// Import bank JSON (bundled into worker)
+import bankJson from "./questions.json";
+
+const BANK: BankFile = bankJson as any;
+
 type RoomState = {
   code: string;
   phase: Phase;
@@ -26,6 +44,10 @@ type RoomState = {
   counts: number[]; // [0..3]
   players: Player[];
   question: Question;
+  bankIndex: number;
+
+  answers: Record<string, number>;
+  gameOver: boolean;
 };
 
 function json(data: unknown, status = 200) {
@@ -47,8 +69,15 @@ function makeCode() {
   return out;
 }
 
-// MVP: one hard-coded question in the DO.
-// Later we’ll let the host send/advance questions.
+function bankToQuestion(q: BankQuestion): Question {
+  return {
+    question: q.prompt,
+    choices: q.choices,
+    correctIndex: q.correctIndex,
+  };
+}
+
+// Fallback if bank is missing
 function defaultQuestion(): Question {
   return {
     question: "What did Jesus tell Nicodemus is necessary to enter the kingdom of God?",
@@ -60,6 +89,11 @@ function defaultQuestion(): Question {
     ],
     correctIndex: 0,
   };
+}
+
+function firstQuestionFromBank(): Question {
+  const q = BANK?.questions?.[0];
+  return q ? bankToQuestion(q) : defaultQuestion();
 }
 
 export default {
@@ -105,6 +139,36 @@ export class Room {
   // Per-round: once we score, we don’t score again if host re-sends REVEAL
   scoredThisRound = false;
 
+  resetRound() {
+      this.room.counts = [0, 0, 0, 0];
+      this.room.answers = {};
+      this.answered.clear();
+      this.scoredThisRound = false;
+    }
+
+    advanceQuestionIfPossible() {
+      const total = BANK?.questions?.length ?? 0;
+
+      if (total <= 0) {
+        this.room.bankIndex = 0;
+        this.room.question = defaultQuestion();
+        this.room.gameOver = true;
+        return;
+      }
+
+      // if already at last question, mark game over and do not advance
+      if (this.room.bankIndex >= total - 1) {
+        this.room.bankIndex = total - 1;
+        this.room.question = bankToQuestion(BANK.questions[this.room.bankIndex]);
+        this.room.gameOver = true;
+        return;
+      }
+
+      this.room.bankIndex += 1;
+      this.room.question = bankToQuestion(BANK.questions[this.room.bankIndex]);
+      this.room.gameOver = false;
+    }
+
   constructor(state: DurableObjectState) {
     this.state = state;
 
@@ -114,7 +178,10 @@ export class Room {
       timerSeconds: 20,
       counts: [0, 0, 0, 0],
       players: [],
-      question: defaultQuestion(),
+      question: firstQuestionFromBank(),
+      bankIndex: 0,
+      answers: {},
+      gameOver: false,
     };
   }
 
@@ -124,6 +191,13 @@ export class Room {
     if (url.hostname === "room" && url.pathname === "/init" && req.method === "POST") {
       const stored = await this.state.storage.get<RoomState>("room");
       if (stored) this.room = stored;
+
+      // Safety: if older rooms don’t have bankIndex/question yet
+      if (typeof (this.room as any).bankIndex !== "number") (this.room as any).bankIndex = 0;
+      if (!this.room.question) this.room.question = firstQuestionFromBank();
+      if (!(this.room as any).answers) (this.room as any).answers = {};
+      if (typeof (this.room as any).gameOver !== "boolean") (this.room as any).gameOver = false;
+
       await this.state.storage.put("room", this.room);
       return new Response("ok");
     }
@@ -152,7 +226,6 @@ export class Room {
       const stored = await this.state.storage.get<RoomState>("room");
       if (stored) this.room = stored;
 
-      // Ensure code exists
       if (!this.room.code) this.room.code = code;
 
       let playerId: string | undefined;
@@ -186,7 +259,6 @@ export class Room {
         }
       });
 
-      // Send initial state to new connection, then broadcast roster update
       this.send(server);
       this.broadcast();
 
@@ -200,7 +272,7 @@ export class Room {
     const meta = this.sockets.get(ws);
     if (!meta) return;
 
-    // Host control messages
+    // Host: timer
     if (meta.role === "host" && msg?.type === "SET_TIMER") {
       const n = Number(msg.timerSeconds);
       if ([10, 20, 30, 45, 60].includes(n)) {
@@ -211,27 +283,82 @@ export class Room {
       return;
     }
 
-    if (meta.role === "host" && msg?.type === "SET_PHASE") {
-      const phase = String(msg.phase || "") as Phase;
+    if (meta.role === "host" && msg?.type === "RESET_GAME") {
+        this.room.phase = "LOBBY";
+        this.room.bankIndex = 0;
+        this.room.question = firstQuestionFromBank();
+        this.room.gameOver = false;
 
-      if (["LOBBY", "QUESTION_ONLY", "ANSWERS_OPEN", "REVEAL", "LEADERBOARD"].includes(phase)) {
-        this.room.phase = phase;
+        this.resetRound();
 
-        // New answering window => reset counts + per-player answer lock + scoring flag
-        if (this.room.phase === "ANSWERS_OPEN") {
-          this.room.counts = [0, 0, 0, 0];
-          this.answered.clear();
-          this.scoredThisRound = false;
-        }
-
-        // On REVEAL, score once per round
-        if (this.room.phase === "REVEAL") {
-          await this.scoreRoundIfNeeded();
-        }
+        // reset scores but keep the same joined players
+        for (const p of this.room.players) p.score = 0;
 
         await this.persist();
         this.broadcast();
+        return;
       }
+
+    // Host: advance question in bank
+    if (meta.role === "host" && msg?.type === "NEXT_QUESTION") {
+      const total = BANK?.questions?.length ?? 0;
+      if (total > 0) {
+        this.room.bankIndex = (this.room.bankIndex + 1) % total;
+        const next = BANK.questions[this.room.bankIndex];
+        this.room.question = bankToQuestion(next);
+      } else {
+        this.room.question = defaultQuestion();
+        this.room.bankIndex = 0;
+      }
+
+      // Reset per-question round state safely
+      this.room.counts = [0, 0, 0, 0];
+      this.room.answers = {};
+      this.answered.clear();
+      this.scoredThisRound = false;
+
+      await this.persist();
+      this.broadcast();
+      return;
+    }
+
+    // Host: phase control
+    if (meta.role === "host" && msg?.type === "SET_PHASE") {
+      const nextPhase = String(msg.phase || "") as Phase;
+
+      if (!["LOBBY", "QUESTION_ONLY", "ANSWERS_OPEN", "REVEAL", "LEADERBOARD"].includes(nextPhase)) return;
+
+      const prevPhase = this.room.phase;
+      this.room.phase = nextPhase;
+
+      // When entering answer window, reset round data
+      if (nextPhase === "ANSWERS_OPEN") {
+        this.resetRound();
+      }
+
+      // On reveal, score once
+      if (nextPhase === "REVEAL") {
+        await this.scoreRoundIfNeeded();
+      }
+
+      // When host goes from LEADERBOARD -> QUESTION_ONLY, advance question (unless game over)
+      if (prevPhase === "LEADERBOARD" && nextPhase === "QUESTION_ONLY") {
+        if (!this.room.gameOver) {
+          this.advanceQuestionIfPossible();
+          this.resetRound();
+        }
+      }
+
+      // If we enter LEADERBOARD while on last question, mark game over
+      if (nextPhase === "LEADERBOARD") {
+        const total = BANK?.questions?.length ?? 0;
+        if (total > 0 && this.room.bankIndex >= total - 1) {
+          this.room.gameOver = true;
+        }
+      }
+
+      await this.persist();
+      this.broadcast();
       return;
     }
 
@@ -244,9 +371,10 @@ export class Room {
       if (!Number.isInteger(idx) || idx < 0 || idx > 3) return;
 
       // Only one answer per player per question window
-      if (this.answered.has(meta.playerId)) return;
+      if (this.room.answers[meta.playerId] !== undefined) return; // NEW: persisted lock
 
-      this.answered.set(meta.playerId, idx);
+      this.room.answers[meta.playerId] = idx; // NEW: persist
+      this.answered.set(meta.playerId, idx);  // optional, keep if you want
       this.room.counts[idx] = (this.room.counts[idx] || 0) + 1;
 
       await this.persist();
@@ -261,22 +389,22 @@ export class Room {
   }
 
   async scoreRoundIfNeeded() {
-    if (this.scoredThisRound) return;
+  if (this.scoredThisRound) return;
 
-    const correct = this.room.question.correctIndex;
+  const correct = this.room.question.correctIndex;
 
-    for (const [playerId, idx] of this.answered.entries()) {
-      if (idx !== correct) continue;
+  for (const [playerId, idx] of Object.entries(this.room.answers)) {
+    const picked = Number(idx);
+    if (picked !== correct) continue;
 
-      const p = this.room.players.find((x) => x.id === playerId);
-      if (!p) continue;
+    const p = this.room.players.find((x) => x.id === playerId);
+    if (!p) continue;
 
-      // MVP scoring: flat +1000 for correct
-      p.score += 1000;
-    }
-
-    this.scoredThisRound = true;
+    p.score += 1000;
   }
+
+  this.scoredThisRound = true;
+}
 
   snapshot() {
     const playersConnected = this.room.players.filter((p) => p.connected);
@@ -295,24 +423,28 @@ export class Room {
       top5,
       players: playersConnected.map((p) => ({ name: p.name, score: p.score })),
 
-      // Optional, but useful for the app soon:
+      // Now driven by bank:
       question: this.room.question.question,
       choices: this.room.question.choices,
       correctIndex: this.room.question.correctIndex,
+      bankIndex: this.room.bankIndex,
+
+      totalQuestions: BANK?.questions?.length ?? 0,
+      gameOver: this.room.gameOver,
     };
   }
 
   send(ws: WebSocket) {
-  const meta = this.sockets.get(ws);
-  const state: any = this.snapshot();
+    const meta = this.sockets.get(ws);
+    const state: any = this.snapshot();
 
-  if (meta?.role === "player" && meta.playerId) {
-    const me = this.room.players.find((p) => p.id === meta.playerId);
-    state.me = me ? { name: me.name, score: me.score } : { name: "", score: 0 };
+    if (meta?.role === "player" && meta.playerId) {
+      const me = this.room.players.find((p) => p.id === meta.playerId);
+      state.me = me ? { name: me.name, score: me.score } : { name: "", score: 0 };
+    }
+
+    ws.send(JSON.stringify({ type: "STATE", state }));
   }
-
-  ws.send(JSON.stringify({ type: "STATE", state }));
-}
 
   broadcast() {
     for (const [ws] of this.sockets) {

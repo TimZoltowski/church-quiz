@@ -1,0 +1,12 @@
+{
+  "name": "church-quiz",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently -n WORKER,APP -c auto \"npm:dev:worker\" \"npm:dev:app\"",
+    "dev:worker": "cd worker/church-quiz-worker && npx wrangler dev --port 8787",
+    "dev:app": "cd app && npm run dev"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.0"
+  }
+}
