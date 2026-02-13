@@ -13,6 +13,7 @@ export default function Host() {
   const [counts, setCounts] = useState([0, 0, 0, 0]);
   const [ws, setWs] = useState(null);
   const [wsStatus, setWsStatus] = useState("disconnected"); // disconnected | connecting | connected
+  const [top5, setTop5] = useState([]);
 
   const sample = useMemo(
     () => ({
@@ -68,6 +69,7 @@ export default function Host() {
             setPlayersCount(msg.state.playersCount ?? 0);
             setPlayers(msg.state.players ?? []);
             setCounts(Array.isArray(msg.state.counts) ? msg.state.counts : [0, 0, 0, 0]);
+            setTop5(Array.isArray(msg.state.top5) ? msg.state.top5 : []);
 
             // Helpful when debugging counts
             // console.log("STATE:", msg.state);
@@ -219,17 +221,21 @@ export default function Host() {
                 <div style={styles.leaderboard}>
                   <div style={styles.lbTitle}>Leaderboard (Top 5)</div>
                   <div style={styles.lbList}>
-                    {sample.top5.map((p, i) => (
-                      <div key={p.name} style={styles.lbRow}>
-                        <div style={styles.lbRank}>{i + 1}</div>
-                        <div style={styles.lbName}>{p.name}</div>
-                        <div style={styles.lbScore}>{p.score}</div>
-                      </div>
-                    ))}
-                  </div>
-                  <div style={styles.lbHint}>Next: question-only screen again.</div>
-                </div>
-              )}
+                    {top5.length === 0 ? (
+                      <div style={{ opacity: 0.85, fontWeight: 800 }}>No scores yet…</div>
+                    ) : (
+                      top5.map((p, i) => (
+                        <div key={`${p.name}-${i}`} style={styles.lbRow}>
+                          <div style={styles.lbRank}>{i + 1}</div>
+                          <div style={styles.lbName}>{p.name}</div>
+                          <div style={styles.lbScore}>{p.score}</div>
+                        </div>
+                      ))
+                    )}
+    </div>
+    <div style={styles.lbHint}>Next: question-only screen again.</div>
+  </div>
+)}
             </>
           )}
         </div>
