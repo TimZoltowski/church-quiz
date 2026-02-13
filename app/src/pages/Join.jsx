@@ -10,6 +10,7 @@ export default function Join() {
   const [name, setName] = useState("");
   const [code, setCode] = useState("");
   const wsRef = useRef(null);
+  const prevPhaseRef = useRef("LOBBY");
 
   useEffect(() => {
     return () => {
@@ -54,24 +55,28 @@ export default function Join() {
 };
 
     socket.onmessage = (evt) => {
-      try {
-        const msg = JSON.parse(evt.data);
-        if (msg.type === "STATE") {
-          setPhase(msg.state.phase ?? "LOBBY");
+  try {
+    const msg = JSON.parse(evt.data);
+    if (msg.type !== "STATE") return;
 
-          // simple behavior: unlock answers each time answers open
-          if (msg.state.phase === "ANSWERS_OPEN") {
-            setLocked(false);
-          }
-          // lock on reveal (optional)
-          if (msg.state.phase === "REVEAL") {
-            setLocked(true);
-          }
-        }
-      } catch {
-        // ignore
+    const newPhase = msg.state?.phase ?? "LOBBY";
+
+    // Only react when the phase CHANGES (prevents "unlocking" on every broadcast)
+    if (newPhase !== prevPhaseRef.current) {
+      if (newPhase === "ANSWERS_OPEN") {
+        setLocked(false); // new question window
       }
-    };
+      if (newPhase === "REVEAL") {
+        setLocked(true); // optional: force lock on reveal
+      }
+      prevPhaseRef.current = newPhase;
+    }
+
+    setPhase(newPhase);
+  } catch {
+    // ignore
+  }
+};
 
     socket.onclose = () => {
       // Optional: if the socket closes, return to join screen
