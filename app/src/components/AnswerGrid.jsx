@@ -110,23 +110,23 @@ export function AnswerTile({
         </div>
       )}
 
-      {typeof count === "number" && variant === "host" && (
-        <div
-          style={{
-            position: "absolute",
-            right: 14,
-            bottom: 12,
-            fontSize: 18,
-            fontWeight: 900,
-            color: "rgba(0,0,0,0.75)",
-            background: "rgba(255,255,255,0.45)",
-            borderRadius: 999,
-            padding: "6px 10px",
-          }}
-        >
-          {count}
-        </div>
-      )}
+      {variant === "host" && count !== undefined && (
+  <div
+    style={{
+      position: "absolute",
+      right: 14,
+      bottom: 12,
+      fontSize: 18,
+      fontWeight: 900,
+      color: "rgba(0,0,0,0.75)",
+      background: "rgba(255,255,255,0.45)",
+      borderRadius: 999,
+      padding: "6px 10px",
+    }}
+  >
+    {count}
+  </div>
+)}
 
       <div style={{ position: "absolute", inset: 0, boxShadow: overlay }} />
     </div>

@@ -4,11 +4,13 @@ import { ANSWERS } from "../constants/answerMap.js";
 import { AnswerTile } from "../components/AnswerGrid.jsx";
 
 export default function Host() {
+  // IMPORTANT: phase/timer/counts are treated as server-truth once WS is connected.
   const [phase, setPhase] = useState("LOBBY"); // LOBBY | QUESTION_ONLY | ANSWERS_OPEN | REVEAL | LEADERBOARD
   const [timerSeconds, setTimerSeconds] = useState(20);
   const [roomCode, setRoomCode] = useState("");
   const [playersCount, setPlayersCount] = useState(0);
   const [players, setPlayers] = useState([]);
+  const [counts, setCounts] = useState([0, 0, 0, 0]);
   const [ws, setWs] = useState(null);
   const [wsStatus, setWsStatus] = useState("disconnected"); // disconnected | connecting | connected
 
@@ -23,7 +25,6 @@ export default function Host() {
         "A person must become more religious",
       ],
       correctIndex: 0,
-      counts: [9, 3, 1, 2],
       top5: [
         { name: "James", score: 1850 },
         { name: "Mike", score: 1700 },
@@ -38,19 +39,22 @@ export default function Host() {
   async function startRoom() {
     try {
       setWsStatus("connecting");
+
       const { code } = await createRoom();
       setRoomCode(code);
 
       const socket = new WebSocket(roomWsUrl(code, "host"));
-     socket.onopen = () => {
-  setWsStatus("connected");
-  try {
-    socket.send(JSON.stringify({ type: "HELLO", role: "host" }));
-    socket.send(JSON.stringify({ type: "GET_STATE" }));
-  } catch {
-    // ignore
-  }
-};
+
+      socket.onopen = () => {
+        setWsStatus("connected");
+        try {
+          socket.send(JSON.stringify({ type: "HELLO", role: "host" }));
+          socket.send(JSON.stringify({ type: "GET_STATE" }));
+        } catch {
+          // ignore
+        }
+      };
+
       socket.onclose = () => setWsStatus("disconnected");
       socket.onerror = () => setWsStatus("disconnected");
 
@@ -58,8 +62,15 @@ export default function Host() {
         try {
           const msg = JSON.parse(evt.data);
           if (msg.type === "STATE") {
+            // Treat server as source of truth (prevents UI drift).
+            setPhase(msg.state.phase ?? "LOBBY");
+            setTimerSeconds(msg.state.timerSeconds ?? 20);
             setPlayersCount(msg.state.playersCount ?? 0);
             setPlayers(msg.state.players ?? []);
+            setCounts(Array.isArray(msg.state.counts) ? msg.state.counts : [0, 0, 0, 0]);
+
+            // Helpful when debugging counts
+            // console.log("STATE:", msg.state);
           }
         } catch {
           // ignore
@@ -75,14 +86,18 @@ export default function Host() {
 
   function send(type, payload = {}) {
     if (!ws || ws.readyState !== 1) return;
-    ws.send(JSON.stringify({ type, ...payload }));
+    try {
+      ws.send(JSON.stringify({ type, ...payload }));
+    } catch {
+      // ignore
+    }
   }
 
   const nextPhase = () => {
     const order = ["LOBBY", "QUESTION_ONLY", "ANSWERS_OPEN", "REVEAL", "LEADERBOARD"];
     const idx = order.indexOf(phase);
     const next = order[(idx + 1) % order.length];
-    setPhase(next);
+    // Don't setPhase here — let the server broadcast STATE back so UI stays in sync.
     send("SET_PHASE", { phase: next });
   };
 
@@ -112,10 +127,11 @@ export default function Host() {
             value={timerSeconds}
             onChange={(e) => {
               const n = Number(e.target.value);
-              setTimerSeconds(n);
-              send("SET_TIMER", { timerSeconds: n });
+              setTimerSeconds(n); // local UI immediately reflects selection
+              send("SET_TIMER", { timerSeconds: n }); // server persists + rebroadcasts
             }}
             style={styles.select}
+            disabled={!roomCode}
           >
             {[10, 20, 30, 45, 60].map((n) => (
               <option key={n} value={n}>
@@ -124,7 +140,7 @@ export default function Host() {
             ))}
           </select>
 
-          <button onClick={nextPhase} style={styles.btn}>
+          <button onClick={nextPhase} style={styles.btn} disabled={!roomCode}>
             Next
           </button>
         </div>
@@ -152,10 +168,7 @@ export default function Host() {
               </div>
 
               <button
-                onClick={() => {
-                  setPhase("QUESTION_ONLY");
-                  send("SET_PHASE", { phase: "QUESTION_ONLY" });
-                }}
+                onClick={() => send("SET_PHASE", { phase: "QUESTION_ONLY" })}
                 style={{
                   ...styles.btn,
                   fontSize: 18,
@@ -194,7 +207,7 @@ export default function Host() {
                           subtitle={a.label}
                           variant="host"
                           highlight={highlight}
-                          count={phase === "REVEAL" ? sample.counts[a.idx] : undefined}
+                          count={phase === "REVEAL" ? (counts?.[a.idx] ?? 0) : undefined}
                         />
                       );
                     })}

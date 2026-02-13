@@ -70,7 +70,11 @@ export default {
 export class Room {
   state: DurableObjectState;
   room: RoomState;
+
   sockets = new Map<WebSocket, { role: Role; playerId?: string }>();
+
+  // Per-round: prevent double answers (playerId -> idx)
+  answered = new Map<string, number>();
 
   constructor(state: DurableObjectState) {
     this.state = state;
@@ -87,7 +91,6 @@ export class Room {
     const url = new URL(req.url);
 
     if (url.hostname === "room" && url.pathname === "/init" && req.method === "POST") {
-      // idempotent init
       const stored = await this.state.storage.get<RoomState>("room");
       if (stored) this.room = stored;
       await this.state.storage.put("room", this.room);
@@ -113,17 +116,20 @@ export class Room {
       // Ensure room code is set from the path
       const mm = url.pathname.match(/^\/api\/room\/([A-Z0-9]{5})\/ws$/);
       const code = mm?.[1] || "";
-      if (!this.room.code) this.room.code = code;
 
-      // Load persisted state
+      // Load persisted state first
       const stored = await this.state.storage.get<RoomState>("room");
       if (stored) this.room = stored;
+
+      // Ensure code exists
       if (!this.room.code) this.room.code = code;
 
       let playerId: string | undefined;
 
       if (role === "player") {
         playerId = crypto.randomUUID();
+
+        // Add or re-add player
         this.room.players.push({ id: playerId, name, score: 0, connected: true });
         await this.persist();
       }
@@ -134,7 +140,9 @@ export class Room {
         try {
           const msg = JSON.parse(String(evt.data || "{}"));
           await this.onMessage(server, msg);
-        } catch {}
+        } catch {
+          // ignore
+        }
       });
 
       server.addEventListener("close", async () => {
@@ -144,6 +152,9 @@ export class Room {
         if (meta?.playerId) {
           const p = this.room.players.find((x) => x.id === meta.playerId);
           if (p) p.connected = false;
+
+          // If they disconnect mid-round, we do NOT decrement counts
+          // (keeping it simple for MVP)
           await this.persist();
           this.broadcast();
         }
@@ -163,22 +174,56 @@ export class Room {
     const meta = this.sockets.get(ws);
     if (!meta) return;
 
-    // Host control messages (we'll expand these next)
+    // Host control messages
     if (meta.role === "host" && msg?.type === "SET_TIMER") {
       const n = Number(msg.timerSeconds);
-      if ([10, 20, 30, 45, 60].includes(n)) this.room.timerSeconds = n;
+      if ([10, 20, 30, 45, 60].includes(n)) {
+        this.room.timerSeconds = n;
+        await this.persist();
+        this.broadcast();
+      }
+      return;
+    }
+
+    if (meta.role === "host" && msg?.type === "SET_PHASE") {
+      const phase = String(msg.phase || "");
+      if (["LOBBY", "QUESTION_ONLY", "ANSWERS_OPEN", "REVEAL", "LEADERBOARD"].includes(phase)) {
+        this.room.phase = phase as any;
+
+        // New answering window => reset counts + per-player answer lock
+        if (this.room.phase === "ANSWERS_OPEN") {
+          this.room.counts = [0, 0, 0, 0];
+          this.answered.clear();
+        }
+
+        await this.persist();
+        this.broadcast();
+      }
+      return;
+    }
+
+    // Player answers
+    if (meta.role === "player" && msg?.type === "ANSWER") {
+      if (!meta.playerId) return;
+      if (this.room.phase !== "ANSWERS_OPEN") return;
+
+      const idx = Number(msg.idx);
+      if (!Number.isInteger(idx) || idx < 0 || idx > 3) return;
+
+      // Only one answer per player per question window
+      if (this.answered.has(meta.playerId)) return;
+
+      this.answered.set(meta.playerId, idx);
+      this.room.counts[idx] = (this.room.counts[idx] || 0) + 1;
+
       await this.persist();
       this.broadcast();
       return;
     }
 
-    if (meta.role === "host" && msg?.type === "SET_PHASE") {
-      const phase = msg.phase;
-      if (["LOBBY","QUESTION_ONLY","ANSWERS_OPEN","REVEAL","LEADERBOARD"].includes(phase)) {
-        this.room.phase = phase;
-        await this.persist();
-        this.broadcast();
-      }
+    // Optional: HELLO/GET_STATE are harmless no-ops for now
+    if (msg?.type === "GET_STATE") {
+      this.send(ws);
       return;
     }
   }
@@ -208,7 +253,11 @@ export class Room {
 
   broadcast() {
     for (const [ws] of this.sockets) {
-      try { this.send(ws); } catch {}
+      try {
+        this.send(ws);
+      } catch {
+        // ignore
+      }
     }
   }
 

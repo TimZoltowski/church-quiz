@@ -85,16 +85,17 @@ export default function Join() {
   };
 
   const pick = (idx) => {
-    if (locked) return;
-    setLocked(true);
+  if (locked) return;
+  setLocked(true);
 
-    console.log("picked", idx);
-
-    // later: send answer to server
-    // if (wsRef.current?.readyState === 1) {
-    //   wsRef.current.send(JSON.stringify({ type: "ANSWER", idx }));
-    // }
-  };
+  if (wsRef.current?.readyState === 1) {
+    try {
+      wsRef.current.send(JSON.stringify({ type: "ANSWER", idx }));
+    } catch {
+      // ignore
+    }
+  }
+};
 
   if (!joined) {
     return (
