@@ -11,6 +11,7 @@ export default function Join() {
   const [code, setCode] = useState("");
   const wsRef = useRef(null);
   const prevPhaseRef = useRef("LOBBY");
+  const [score, setScore] = useState(0);
 
   useEffect(() => {
     return () => {
@@ -57,7 +58,25 @@ export default function Join() {
     socket.onmessage = (evt) => {
   try {
     const msg = JSON.parse(evt.data);
-    if (msg.type !== "STATE") return;
+    if (msg.type === "STATE") {
+      const nextPhase = msg.state.phase ?? "LOBBY";
+      setPhase(nextPhase);
+      setScore(msg.state?.me?.score ?? 0);
+
+      const prev = prevPhaseRef.current;
+
+      // Only unlock when we ENTER answers-open
+      if (prev !== nextPhase && nextPhase === "ANSWERS_OPEN") {
+        setLocked(false);
+      }
+
+      // Optionally lock when reveal starts
+      if (prev !== nextPhase && nextPhase === "REVEAL") {
+        setLocked(true);
+      }
+
+      prevPhaseRef.current = nextPhase;
+    }
 
     const newPhase = msg.state?.phase ?? "LOBBY";
 
@@ -135,7 +154,10 @@ export default function Join() {
   <div style={styles.phoneWrap}>
     <div style={styles.phoneTop}>
       <div style={{ fontWeight: 900 }}>{name}</div>
-      <div style={{ opacity: 0.85, fontWeight: 800 }}>Room {code}</div>
+      <div style={{ opacity: 0.85, fontWeight: 800 }}>
+        Room {code} · {score} pts
+      </div>
+      
     </div>
 
     {phase === "ANSWERS_OPEN" ? (

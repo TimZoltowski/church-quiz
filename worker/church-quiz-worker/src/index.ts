@@ -11,12 +11,21 @@ type Player = {
   connected: boolean;
 };
 
+type Phase = "LOBBY" | "QUESTION_ONLY" | "ANSWERS_OPEN" | "REVEAL" | "LEADERBOARD";
+
+type Question = {
+  question: string;
+  choices: string[];
+  correctIndex: number; // 0..3
+};
+
 type RoomState = {
   code: string;
-  phase: "LOBBY" | "QUESTION_ONLY" | "ANSWERS_OPEN" | "REVEAL" | "LEADERBOARD";
+  phase: Phase;
   timerSeconds: number;
   counts: number[]; // [0..3]
   players: Player[];
+  question: Question;
 };
 
 function json(data: unknown, status = 200) {
@@ -38,11 +47,28 @@ function makeCode() {
   return out;
 }
 
+// MVP: one hard-coded question in the DO.
+// Later we’ll let the host send/advance questions.
+function defaultQuestion(): Question {
+  return {
+    question: "What did Jesus tell Nicodemus is necessary to enter the kingdom of God?",
+    choices: [
+      "A person must be born again",
+      "A person must try harder",
+      "A person must be born into the right family",
+      "A person must become more religious",
+    ],
+    correctIndex: 0,
+  };
+}
+
 export default {
   async fetch(req: Request, env: Env): Promise<Response> {
     const url = new URL(req.url);
 
-    if (req.method === "OPTIONS") return new Response(null, { status: 204, headers: json({}, 204).headers });
+    if (req.method === "OPTIONS") {
+      return new Response(null, { status: 204, headers: json({}, 204).headers });
+    }
 
     if (url.pathname === "/api/room/create" && req.method === "POST") {
       const code = makeCode();
@@ -73,17 +99,22 @@ export class Room {
 
   sockets = new Map<WebSocket, { role: Role; playerId?: string }>();
 
-  // Per-round: prevent double answers (playerId -> idx)
+  // Per-round: playerId -> idx they picked
   answered = new Map<string, number>();
+
+  // Per-round: once we score, we don’t score again if host re-sends REVEAL
+  scoredThisRound = false;
 
   constructor(state: DurableObjectState) {
     this.state = state;
+
     this.room = {
       code: "",
       phase: "LOBBY",
       timerSeconds: 20,
       counts: [0, 0, 0, 0],
       players: [],
+      question: defaultQuestion(),
     };
   }
 
@@ -128,8 +159,6 @@ export class Room {
 
       if (role === "player") {
         playerId = crypto.randomUUID();
-
-        // Add or re-add player
         this.room.players.push({ id: playerId, name, score: 0, connected: true });
         await this.persist();
       }
@@ -152,9 +181,6 @@ export class Room {
         if (meta?.playerId) {
           const p = this.room.players.find((x) => x.id === meta.playerId);
           if (p) p.connected = false;
-
-          // If they disconnect mid-round, we do NOT decrement counts
-          // (keeping it simple for MVP)
           await this.persist();
           this.broadcast();
         }
@@ -186,14 +212,21 @@ export class Room {
     }
 
     if (meta.role === "host" && msg?.type === "SET_PHASE") {
-      const phase = String(msg.phase || "");
-      if (["LOBBY", "QUESTION_ONLY", "ANSWERS_OPEN", "REVEAL", "LEADERBOARD"].includes(phase)) {
-        this.room.phase = phase as any;
+      const phase = String(msg.phase || "") as Phase;
 
-        // New answering window => reset counts + per-player answer lock
+      if (["LOBBY", "QUESTION_ONLY", "ANSWERS_OPEN", "REVEAL", "LEADERBOARD"].includes(phase)) {
+        this.room.phase = phase;
+
+        // New answering window => reset counts + per-player answer lock + scoring flag
         if (this.room.phase === "ANSWERS_OPEN") {
           this.room.counts = [0, 0, 0, 0];
           this.answered.clear();
+          this.scoredThisRound = false;
+        }
+
+        // On REVEAL, score once per round
+        if (this.room.phase === "REVEAL") {
+          await this.scoreRoundIfNeeded();
         }
 
         await this.persist();
@@ -221,11 +254,28 @@ export class Room {
       return;
     }
 
-    // Optional: HELLO/GET_STATE are harmless no-ops for now
     if (msg?.type === "GET_STATE") {
       this.send(ws);
       return;
     }
+  }
+
+  async scoreRoundIfNeeded() {
+    if (this.scoredThisRound) return;
+
+    const correct = this.room.question.correctIndex;
+
+    for (const [playerId, idx] of this.answered.entries()) {
+      if (idx !== correct) continue;
+
+      const p = this.room.players.find((x) => x.id === playerId);
+      if (!p) continue;
+
+      // MVP scoring: flat +1000 for correct
+      p.score += 1000;
+    }
+
+    this.scoredThisRound = true;
   }
 
   snapshot() {
@@ -244,12 +294,25 @@ export class Room {
       playersCount: playersConnected.length,
       top5,
       players: playersConnected.map((p) => ({ name: p.name, score: p.score })),
+
+      // Optional, but useful for the app soon:
+      question: this.room.question.question,
+      choices: this.room.question.choices,
+      correctIndex: this.room.question.correctIndex,
     };
   }
 
   send(ws: WebSocket) {
-    ws.send(JSON.stringify({ type: "STATE", state: this.snapshot() }));
+  const meta = this.sockets.get(ws);
+  const state: any = this.snapshot();
+
+  if (meta?.role === "player" && meta.playerId) {
+    const me = this.room.players.find((p) => p.id === meta.playerId);
+    state.me = me ? { name: me.name, score: me.score } : { name: "", score: 0 };
   }
+
+  ws.send(JSON.stringify({ type: "STATE", state }));
+}
 
   broadcast() {
     for (const [ws] of this.sockets) {
