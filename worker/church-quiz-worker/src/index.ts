@@ -235,6 +235,7 @@ export class Room {
       if (!this.room.question) this.room.question = firstQuestionFromBank();
       if (!(this.room as any).answers) (this.room as any).answers = {};
       if (typeof (this.room as any).gameOver !== "boolean") (this.room as any).gameOver = false;
+      if (!("roundEndsAt" in (this.room as any))) (this.room as any).roundEndsAt = undefined;
 
       await this.state.storage.put("room", this.room);
       return new Response("ok");
