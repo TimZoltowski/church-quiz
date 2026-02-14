@@ -215,8 +215,7 @@ export default function Host() {
             </div>
           ) : (
             <>
-              <div style={styles.question}>{question}</div>
-
+             {phase !== "LEADERBOARD" && <div style={styles.question}>{question}</div>}
               {phase !== "QUESTION_ONLY" && phase !== "LEADERBOARD" && (
                 <>
                   <div style={styles.timerPill}>
