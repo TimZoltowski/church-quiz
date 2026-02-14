@@ -1,5 +1,5 @@
 import { createRoom, roomWsUrl } from "../lib/api.js";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ANSWERS } from "../constants/answerMap.js";
 import { AnswerTile } from "../components/AnswerGrid.jsx";
 
@@ -20,6 +20,21 @@ export default function Host() {
   const [bankIndex, setBankIndex] = useState(0);
   const [totalQuestions, setTotalQuestions] = useState(0);
   const [gameOver, setGameOver] = useState(false);
+
+  const [roundEndsAt, setRoundEndsAt] = useState(null);
+  const [now, setNow] = useState(0);
+
+  useEffect(() => {
+  if (phase !== "ANSWERS_OPEN" || !roundEndsAt) return;
+
+  const tick = () => setNow(Date.now());
+
+  // Kick off an initial tick ASAP (not synchronously in the effect body)
+  queueMicrotask(tick);
+
+  const id = setInterval(tick, 250);
+  return () => clearInterval(id);
+}, [roundEndsAt, phase]);
 
   async function startRoom() {
     try {
@@ -62,6 +77,10 @@ export default function Host() {
             setTotalQuestions(Number.isInteger(msg.state.totalQuestions) ? msg.state.totalQuestions : 0);
             setGameOver(!!msg.state.gameOver);
 
+            setRoundEndsAt(
+              typeof msg.state.roundEndsAt === "number" ? msg.state.roundEndsAt : null
+            );
+
             // Helpful when debugging counts
             // console.log("STATE:", msg.state);
           }
@@ -87,10 +106,10 @@ export default function Host() {
   }
 
   const nextPhase = () => {
-  if (phase === "LEADERBOARD") {
-    if (gameOver) return; // button is already disabled, but safe
-    send("SET_PHASE", { phase: "QUESTION_ONLY" });
-    return;
+    if (phase === "LEADERBOARD") {
+      if (gameOver) return; // button is already disabled, but safe
+      send("SET_PHASE", { phase: "QUESTION_ONLY" });
+      return;
     }
 
     const order = ["LOBBY", "QUESTION_ONLY", "ANSWERS_OPEN", "REVEAL", "LEADERBOARD"];
@@ -99,6 +118,11 @@ export default function Host() {
     send("SET_PHASE", { phase: next });
   };
 
+  const remaining =
+  phase === "ANSWERS_OPEN" && roundEndsAt
+    ? Math.max(0, Math.ceil((roundEndsAt - now) / 1000))
+    : null;
+
   return (
     <div style={styles.page}>
       <div style={styles.topBar}>
@@ -106,15 +130,11 @@ export default function Host() {
 
         <div style={styles.code}>
           Room: <span style={{ letterSpacing: 2 }}>{roomCode || "—"}</span>
-          <span style={{ marginLeft: 12, opacity: 0.85 }}>
-            Players: {playersCount}
-          </span>
+          <span style={{ marginLeft: 12, opacity: 0.85 }}>Players: {playersCount}</span>
           <span style={{ marginLeft: 12, opacity: 0.85 }}>
             Q: {totalQuestions ? bankIndex + 1 : 0}/{totalQuestions || "—"}
           </span>
-          <span style={{ marginLeft: 12, opacity: 0.75, fontSize: 14 }}>
-            ({wsStatus})
-          </span>
+          <span style={{ marginLeft: 12, opacity: 0.75, fontSize: 14 }}>({wsStatus})</span>
         </div>
 
         <div style={styles.controls}>
@@ -148,6 +168,7 @@ export default function Host() {
           >
             Next
           </button>
+
           {phase === "LEADERBOARD" && gameOver && (
             <button
               onClick={() => send("RESET_GAME")}
@@ -155,7 +176,8 @@ export default function Host() {
               disabled={!roomCode}
             >
               New Game
-            </button>)}
+            </button>
+          )}
         </div>
       </div>
 
@@ -168,9 +190,7 @@ export default function Host() {
 
               <div style={styles.lobbyList}>
                 {players.length === 0 ? (
-                  <div style={{ opacity: 0.85, fontWeight: 800 }}>
-                    Waiting for players…
-                  </div>
+                  <div style={{ opacity: 0.85, fontWeight: 800 }}>Waiting for players…</div>
                 ) : (
                   players.map((p) => (
                     <div key={p.name} style={styles.lobbyChip}>
@@ -200,7 +220,9 @@ export default function Host() {
               {phase !== "QUESTION_ONLY" && phase !== "LEADERBOARD" && (
                 <>
                   <div style={styles.timerPill}>
-                    {phase === "ANSWERS_OPEN" ? `Time: ${timerSeconds}s` : "Time Up"}
+                    {phase === "ANSWERS_OPEN"
+                      ? `Time: ${remaining ?? timerSeconds}s`
+                      : "Time Up"}
                   </div>
 
                   <div style={styles.grid}>
@@ -230,7 +252,9 @@ export default function Host() {
 
               {phase === "LEADERBOARD" && (
                 <div style={styles.leaderboard}>
-                 <div style={styles.lbTitle}>{gameOver ? "Final Leaderboard (Top 5)" : "Leaderboard (Top 5)"}</div>
+                  <div style={styles.lbTitle}>
+                    {gameOver ? "Final Leaderboard (Top 5)" : "Leaderboard (Top 5)"}
+                  </div>
                   <div style={styles.lbList}>
                     {top5.length === 0 ? (
                       <div style={{ opacity: 0.85, fontWeight: 800 }}>No scores yet…</div>
@@ -243,12 +267,14 @@ export default function Host() {
                         </div>
                       ))
                     )}
-    </div>
-    <div style={styles.lbHint}>
-  {gameOver ? "Game over. Click New Game to restart." : "Next: question-only screen again."}
-</div>
-  </div>
-)}
+                  </div>
+                  <div style={styles.lbHint}>
+                    {gameOver
+                      ? "Game over. Click New Game to restart."
+                      : "Next: question-only screen again."}
+                  </div>
+                </div>
+              )}
             </>
           )}
         </div>

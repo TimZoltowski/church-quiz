@@ -48,6 +48,8 @@ type RoomState = {
 
   answers: Record<string, number>;
   gameOver: boolean;
+
+  roundEndsAt?: number;
 };
 
 function json(data: unknown, status = 200) {
@@ -139,11 +141,22 @@ export class Room {
   // Per-round: once we score, we don’t score again if host re-sends REVEAL
   scoredThisRound = false;
 
+    async alarm() {
+    if (this.room.phase === "ANSWERS_OPEN") {
+      this.room.phase = "REVEAL";
+      this.room.roundEndsAt = undefined;
+      await this.scoreRoundIfNeeded();
+      await this.persist();
+      this.broadcast();
+    }
+  }
+
   resetRound() {
       this.room.counts = [0, 0, 0, 0];
       this.room.answers = {};
       this.answered.clear();
       this.scoredThisRound = false;
+      this.room.roundEndsAt = undefined;
     }
 
     advanceQuestionIfPossible() {
@@ -169,6 +182,30 @@ export class Room {
       this.room.gameOver = false;
     }
 
+       // --- timer support ---
+  async cancelAnswerTimer() {
+    // best-effort; ignore if none is set
+    try {
+      await this.state.storage.deleteAlarm();
+    } catch {
+      // ignore
+    }
+  }
+
+  async startAnswerTimer() {
+    // reset any prior alarm (host might re-enter ANSWERS_OPEN)
+    await this.cancelAnswerTimer();
+
+    const ms = (this.room.timerSeconds || 20) * 1000;
+    const when = Date.now() + ms;
+
+    this.room.roundEndsAt = when;
+
+    await this.state.storage.setAlarm(when);
+  }
+
+  
+
   constructor(state: DurableObjectState) {
     this.state = state;
 
@@ -182,6 +219,7 @@ export class Room {
       bankIndex: 0,
       answers: {},
       gameOver: false,
+      roundEndsAt: undefined,
     };
   }
 
@@ -331,9 +369,15 @@ export class Room {
       const prevPhase = this.room.phase;
       this.room.phase = nextPhase;
 
+      // If host manually moves away from ANSWERS_OPEN, stop the alarm
+      if (prevPhase === "ANSWERS_OPEN" && nextPhase !== "ANSWERS_OPEN") {
+        await this.cancelAnswerTimer();
+      }
+
       // When entering answer window, reset round data
-      if (nextPhase === "ANSWERS_OPEN") {
+     if (nextPhase === "ANSWERS_OPEN") {
         this.resetRound();
+        await this.startAnswerTimer(); // NEW
       }
 
       // On reveal, score once
@@ -431,7 +475,12 @@ export class Room {
 
       totalQuestions: BANK?.questions?.length ?? 0,
       gameOver: this.room.gameOver,
-    };
+      roundEndsAt: this.room.roundEndsAt ?? null,
+      remainingSeconds:
+      this.room.roundEndsAt && this.room.phase === "ANSWERS_OPEN"
+        ? Math.max(0, Math.ceil((this.room.roundEndsAt - Date.now()) / 1000))
+        : null,
+        };
   }
 
   send(ws: WebSocket) {
