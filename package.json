@@ -3,8 +3,12 @@
   "private": true,
   "scripts": {
     "dev": "concurrently -n WORKER,APP -c auto \"npm:dev:worker\" \"npm:dev:app\"",
-    "dev:worker": "cd worker/church-quiz-worker && npx wrangler dev --port 8787",
-    "dev:app": "cd app && npm run dev"
+    "dev:worker": "npx wrangler dev --config wrangler.toml --port 8787",
+    "dev:app": "cd app && npm run dev",
+
+    "deploy:worker": "npx wrangler deploy --config wrangler.toml",
+
+    "build:pages": "cd app && npm run build"
   },
   "devDependencies": {
     "concurrently": "^9.0.0"
