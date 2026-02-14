@@ -8,12 +8,12 @@
       "weekTitle": "Awakened to New Life",
       "prompt": "What was Jesus correcting when Nicodemus assumed the kingdom could be entered through heritage and religious status?",
       "choices": [
-        "The need for more miracles",
-        "The idea that morality alone earns entrance",
         "The belief that birth into Israel guarantees kingdom life",
-        "The value of Scripture study"
+        "That stricter morality is the key requirement to qualify",
+        "That temple attendance and reputation automatically secure entrance",
+        "That the kingdom is mainly entered by gaining more religious knowledge"
       ],
-      "correctIndex": 2
+      "correctIndex": 0
     },
     {
       "id": "W1-Q2",
@@ -21,10 +21,10 @@
       "weekTitle": "Awakened to New Life",
       "prompt": "In John 3, why does Jesus use “birth” language instead of “try harder” language?",
       "choices": [
-        "Because humans can gradually train the flesh into holiness",
+        "Because religious training naturally produces a new heart over time",
         "Because spiritual life is received by God’s action, not self-produced",
-        "Because knowledge of doctrine automatically creates new life",
-        "Because religion is mainly about improving behavior"
+        "Because effort and discipline are the main way a person becomes acceptable to God",
+        "Because a person’s family background eventually shapes them into the kingdom"
       ],
       "correctIndex": 1
     },
@@ -34,12 +34,12 @@
       "weekTitle": "Awakened to New Life",
       "prompt": "“Born of water and of the Spirit” most directly points to what theme in the lesson?",
       "choices": [
-        "A required ritual that causes regeneration",
+        "The outward sign of baptism that normally follows salvation",
+        "A ritual washing that automatically produces salvation",
         "Cleansing and inward renewal promised by God, accomplished by the Spirit",
-        "The importance of temple washings for salvation",
-        "The need to feel spiritual emotions before believing"
+        "The washing power of Scripture alone apart from the Spirit’s work"
       ],
-      "correctIndex": 1
+      "correctIndex": 2
     },
     {
       "id": "W1-Q4",
@@ -47,12 +47,12 @@
       "weekTitle": "Awakened to New Life",
       "prompt": "According to the lesson, what can the “flesh” produce at best?",
       "choices": [
-        "True spiritual life that pleases God",
-        "A new heart that loves Christ",
-        "More flesh — behavior polishing without inward rebirth",
-        "Perfect holiness through discipline"
+        "A spiritual nature that pleases God without change",
+        "A heart that loves God by nature",
+        "A clean conscience that replaces the need for new birth",
+        "More flesh — behavior polishing without inward rebirth"
       ],
-      "correctIndex": 2
+      "correctIndex": 3
     },
     {
       "id": "W1-Q5",
@@ -60,12 +60,12 @@
       "weekTitle": "Awakened to New Life",
       "prompt": "Which statement best matches the “new creature” emphasis tied to 2 Corinthians 5:17?",
       "choices": [
-        "A believer becomes instantly flawless",
         "A believer receives a new center of gravity: new desire and direction under a new Master",
-        "A believer earns a fresh start through consistent effort",
-        "A believer’s past no longer matters, so repentance is unnecessary"
+        "A believer is mainly given a second chance to prove themselves",
+        "A believer becomes immediately perfect in thoughts and actions",
+        "A believer’s past doesn’t matter anymore, so repentance is unnecessary"
       ],
-      "correctIndex": 1
+      "correctIndex": 0
     },
 
     {
@@ -74,10 +74,10 @@
       "weekTitle": "Repentance: The Posture of Renewal",
       "prompt": "Acts 3:19 presents repentance and conversion leading to what two outcomes?",
       "choices": [
-        "Spiritual gifts and prosperity",
+        "A new set of religious duties to keep for acceptance",
         "Sins blotted out and times of refreshing from the Lord’s presence",
-        "Public respect and social peace",
-        "A life with fewer temptations"
+        "Immediate public trust and restored reputation",
+        "A guaranteed easier life and fewer struggles"
       ],
       "correctIndex": 1
     },
@@ -87,10 +87,10 @@
       "weekTitle": "Repentance: The Posture of Renewal",
       "prompt": "In the lesson, repentance is best described as:",
       "choices": [
-        "A one-time doorway you outgrow",
+        "A private regret that matters only if you feel it strongly",
         "A shame-based punishment that keeps you fearful",
         "An ongoing posture—turning from sin and toward God as the Spirit works",
-        "A private feeling you keep to yourself"
+        "A one-time doorway you outgrow once you mature"
       ],
       "correctIndex": 2
     },
@@ -100,12 +100,12 @@
       "weekTitle": "Repentance: The Posture of Renewal",
       "prompt": "Psalm 51 shows repentance as primarily concerned with:",
       "choices": [
-        "Avoiding consequences and protecting reputation",
-        "Negotiating with God to reduce punishment",
-        "Restored fellowship with God and inner cleansing",
-        "Proving to others you changed"
+        "Avoiding consequences and managing appearances",
+        "Balancing the scales by earning forgiveness through effort",
+        "Proving to others you changed so they accept you again",
+        "Restored fellowship with God and inner cleansing"
       ],
-      "correctIndex": 2
+      "correctIndex": 3
     },
     {
       "id": "W2-Q9",
@@ -113,12 +113,12 @@
       "weekTitle": "Repentance: The Posture of Renewal",
       "prompt": "Which pairing reflects the lesson’s warning about the enemy twisting repentance?",
       "choices": [
-        "Fear: “Confess so people approve you” / Pride: “Work harder to be saved”",
         "Fear: “If I confess, God will reject me” / Pride: “I don’t need to confess; I’m fine”",
-        "Fear: “Never feel conviction” / Pride: “Never seek forgiveness”",
-        "Fear: “God ignores sin” / Pride: “God rewards sin”"
+        "Fear: “Only confess small sins” / Pride: “Only confess when caught”",
+        "Fear: “Never admit sin at all” / Pride: “God doesn’t care about sin anyway”",
+        "Fear: “Confess only when you feel strong” / Pride: “Confess so people admire you”"
       ],
-      "correctIndex": 1
+      "correctIndex": 0
     },
     {
       "id": "W2-Q10",
@@ -126,10 +126,10 @@
       "weekTitle": "Repentance: The Posture of Renewal",
       "prompt": "What does Psalm 51 call “the sacrifices of God”?",
       "choices": [
-        "Burnt offerings done regularly",
+        "Giving money to make up for past sin",
         "A broken spirit and a broken, contrite heart God will not despise",
-        "Public fasting and visible sorrow",
-        "Paying back what you stole before forgiveness"
+        "Public fasting that shows everyone you’re serious",
+        "Religious routine done consistently to earn mercy"
       ],
       "correctIndex": 1
     },
@@ -140,12 +140,12 @@
       "weekTitle": "Assurance of Salvation",
       "prompt": "In 1 John 5:11–13, assurance is grounded primarily in:",
       "choices": [
-        "How strong your feelings are during worship",
+        "Your ability to explain every doctrine without mistakes",
+        "A spotless track record after conversion",
         "God’s testimony (“record”) about His Son and eternal life",
-        "Never struggling with sin again",
-        "Your ability to explain theology perfectly"
+        "How powerful your worship feelings are week to week"
       ],
-      "correctIndex": 1
+      "correctIndex": 2
     },
     {
       "id": "W3-Q12",
@@ -153,12 +153,12 @@
       "weekTitle": "Assurance of Salvation",
       "prompt": "According to the lesson, “This is the record” functions like:",
       "choices": [
-        "A motivational slogan",
-        "A private opinion you adopt",
-        "A courtroom-like witness statement—God’s sworn testimony",
-        "A church tradition passed down"
+        "A slogan meant to motivate you when you’re down",
+        "A private opinion you choose to adopt",
+        "A church tradition that varies by denomination",
+        "A courtroom-like witness statement—God’s sworn testimony"
       ],
-      "correctIndex": 2
+      "correctIndex": 3
     },
     {
       "id": "W3-Q13",
@@ -166,12 +166,12 @@
       "weekTitle": "Assurance of Salvation",
       "prompt": "What is the sharp line 1 John draws to clarify who has life?",
       "choices": [
-        "Those who behave well have life",
         "Those who have the Son have life; those who do not have the Son do not have life",
-        "Those with religious knowledge have life",
-        "Those with spiritual experiences have life"
+        "Those who attend church consistently have life",
+        "Those who avoid doubt completely have life",
+        "Those who behave well have life"
       ],
-      "correctIndex": 1
+      "correctIndex": 0
     },
     {
       "id": "W3-Q14",
@@ -179,10 +179,10 @@
       "weekTitle": "Assurance of Salvation",
       "prompt": "In John 10, the believer’s security is pictured as resting in:",
       "choices": [
-        "The sheep’s strength and consistency",
+        "The believer’s ability to never stumble again",
         "The Shepherd’s giving of life and keeping power—no one can pluck them out",
-        "The temple system and offerings",
-        "The community’s approval"
+        "The sheep’s consistency and personal willpower",
+        "The strength of the community holding them accountable"
       ],
       "correctIndex": 1
     },
@@ -192,12 +192,12 @@
       "weekTitle": "Assurance of Salvation",
       "prompt": "Which statement best reflects the lesson’s view of true assurance?",
       "choices": [
-        "Assurance makes you coast because you’re safe",
+        "Assurance is earned by years of steady obedience",
+        "Assurance is mainly about feeling close to God every day",
         "Assurance prepares you to tell your testimony with gratitude, not fear",
-        "Assurance means you never doubt again",
-        "Assurance is earned by obedience"
+        "Assurance means you never have questions or fears again"
       ],
-      "correctIndex": 1
+      "correctIndex": 2
     },
 
     {
@@ -206,12 +206,12 @@
       "weekTitle": "Grace: God’s Initiative in Salvation",
       "prompt": "In Ephesians 2, Paul starts the story of salvation with:",
       "choices": [
-        "What you promised God",
-        "What God did—He “quickened” (made alive) the dead",
-        "What the church taught you",
-        "What your family modeled"
+        "What the church helped you accomplish through discipline",
+        "What your upbringing set you up to become",
+        "What you promised God you would do from now on",
+        "What God did—He “quickened” (made alive) the dead"
       ],
-      "correctIndex": 1
+      "correctIndex": 3
     },
     {
       "id": "W4-Q17",
@@ -219,12 +219,12 @@
       "weekTitle": "Grace: God’s Initiative in Salvation",
       "prompt": "The lesson describes grace as:",
       "choices": [
-        "God meeting you halfway if you prove sincerity",
         "God coming all the way to the dead and bound, giving life where there was none",
-        "God overlooking sin without dealing with justice",
-        "God rewarding moral improvement"
+        "God meeting you halfway if you prove sincerity",
+        "God rewarding your improvement after you clean yourself up",
+        "God overlooking sin without ever dealing with justice"
       ],
-      "correctIndex": 1
+      "correctIndex": 0
     },
     {
       "id": "W4-Q18",
@@ -232,12 +232,12 @@
       "weekTitle": "Grace: God’s Initiative in Salvation",
       "prompt": "“Not of works, lest any man should boast” is used to show:",
       "choices": [
-        "Works are always sinful",
-        "Works can purchase grace if done consistently",
+        "Only certain religious works count toward acceptance",
         "God saves in a way that shuts down pride and self-congratulation",
-        "Only certain works count"
+        "Works can earn salvation if you maintain them long enough",
+        "Works are meaningless and should be avoided"
       ],
-      "correctIndex": 2
+      "correctIndex": 1
     },
     {
       "id": "W4-Q19",
@@ -245,10 +245,10 @@
       "weekTitle": "Grace: God’s Initiative in Salvation",
       "prompt": "According to the lesson, good works are:",
       "choices": [
-        "The root of salvation",
-        "Optional once you believe",
+        "The root cause of salvation",
+        "A way to keep salvation once you’ve received it",
         "The fruit of being God’s workmanship—created in Christ to walk in them",
-        "Proof you were never dead in sin"
+        "A substitute for repentance and faith"
       ],
       "correctIndex": 2
     },
@@ -258,12 +258,12 @@
       "weekTitle": "Grace: God’s Initiative in Salvation",
       "prompt": "The “bedrock” beneath new birth, repentance, and assurance is:",
       "choices": [
-        "Human determination",
-        "Religious ceremony",
-        "Grace—God’s initiative in salvation",
-        "Social belonging"
+        "Human determination and willpower",
+        "Religious ceremony that seals salvation",
+        "Spiritual experiences that confirm your worthiness",
+        "Grace—God’s initiative in salvation"
       ],
-      "correctIndex": 2
+      "correctIndex": 3
     },
 
     {
@@ -272,12 +272,12 @@
       "weekTitle": "Faith that Lives and Trusts",
       "prompt": "Hebrews 11 presents faith as “substance” and “evidence.” In the lesson, that means faith:",
       "choices": [
-        "Is blind guessing with no reason",
         "Makes God’s promised realities weighty and present, even when unseen",
-        "Depends mainly on emotional intensity",
-        "Replaces obedience with optimism"
+        "Is mainly confidence that things will work out if you stay positive",
+        "Is the same thing as certainty you’ll never struggle again",
+        "Is blind guessing with no reason"
       ],
-      "correctIndex": 1
+      "correctIndex": 0
     },
     {
       "id": "W5-Q22",
@@ -285,10 +285,10 @@
       "weekTitle": "Faith that Lives and Trusts",
       "prompt": "In the lesson’s framing, Hebrews 11 is primarily:",
       "choices": [
-        "A detached inspirational chapter for posters",
+        "A chapter mainly about celebrating human greatness",
         "Battlefield encouragement to endure when obedience is costly",
-        "A proof that suffering means God is absent",
-        "A list of heroes to entertain us"
+        "A detached inspirational chapter for posters",
+        "A list meant to entertain more than instruct"
       ],
       "correctIndex": 1
     },
@@ -298,12 +298,12 @@
       "weekTitle": "Faith that Lives and Trusts",
       "prompt": "“Without faith it is impossible to please him” is explained as:",
       "choices": [
-        "God only rewards perfect people",
+        "Faith being optional as long as you do good works",
+        "Faith being mostly an emotional feeling of closeness",
         "Faith being the fitting posture toward the living God who has spoken",
-        "Faith being optional if you do enough works",
-        "Faith being the same as religious tradition"
+        "God only accepts people who never fail"
       ],
-      "correctIndex": 1
+      "correctIndex": 2
     },
     {
       "id": "W5-Q24",
@@ -311,12 +311,12 @@
       "weekTitle": "Faith that Lives and Trusts",
       "prompt": "According to Hebrews 11:6, faith includes believing:",
       "choices": [
-        "God exists and can be manipulated",
-        "God is, and He rewards those who diligently seek Him",
-        "God only helps those who help themselves",
-        "God ignores unbelief if you’re sincere"
+        "God overlooks unbelief as long as you’re sincere",
+        "God exists and can be controlled if you say the right words",
+        "God only helps people who help themselves first",
+        "God is, and He rewards those who diligently seek Him"
       ],
-      "correctIndex": 1
+      "correctIndex": 3
     },
     {
       "id": "W5-Q25",
@@ -324,12 +324,12 @@
       "weekTitle": "Faith that Lives and Trusts",
       "prompt": "Galatians 2:20 is used to show that faith is not only how you start with Christ, but how you:",
       "choices": [
-        "Achieve self-improvement",
         "Live daily—“Christ liveth in me” shaping identity and obedience",
-        "Avoid hardship",
-        "Replace repentance with confidence"
+        "Avoid hardship by staying confident",
+        "Replace repentance with self-assurance",
+        "Earn spiritual status through discipline"
       ],
-      "correctIndex": 1
+      "correctIndex": 0
     },
 
     {
@@ -338,10 +338,10 @@
       "weekTitle": "Hungering After God",
       "prompt": "In Matthew 5:6, Jesus blesses those who hunger and thirst after:",
       "choices": [
-        "Comfort and success",
+        "Religious knowledge and spiritual experiences",
         "Righteousness—what aligns with God’s will and character",
-        "Knowledge and reputation",
-        "Religious appearances"
+        "Approval from others that proves you’re doing well",
+        "Comfort and success"
       ],
       "correctIndex": 1
     },
@@ -352,9 +352,9 @@
       "prompt": "The lesson stresses hunger is not:",
       "choices": [
         "A sign of life",
-        "Something you can feel during dryness",
+        "Something God intends to satisfy over time",
         "Something you must manufacture through hype",
-        "An appetite God intends to satisfy"
+        "Something you can feel during dryness"
       ],
       "correctIndex": 2
     },
@@ -364,12 +364,12 @@
       "weekTitle": "Hungering After God",
       "prompt": "The promise “they shall be filled” is explained as:",
       "choices": [
-        "A reward for disciplined personalities",
-        "God Himself filling the hunger He creates; satisfaction found where God says it is",
-        "Proof that Christians never struggle",
-        "Guaranteed emotional highs"
+        "A guarantee of constant emotional highs",
+        "Proof that mature believers never struggle again",
+        "A reward mainly for disciplined personalities",
+        "God Himself filling the hunger He creates; satisfaction found where God says it is"
       ],
-      "correctIndex": 1
+      "correctIndex": 3
     },
     {
       "id": "W6-Q29",
@@ -377,12 +377,12 @@
       "weekTitle": "Hungering After God",
       "prompt": "Psalm 42’s deer imagery (“panteth”) is used to picture:",
       "choices": [
-        "A calm, casual interest in God",
         "A soul gasping with real need for the living God",
-        "A believer who has no questions",
-        "A person who has outgrown worship"
+        "A calm, casual interest in God",
+        "A person who has outgrown worship and no longer needs it",
+        "A believer who never experiences discouragement"
       ],
-      "correctIndex": 1
+      "correctIndex": 0
     },
     {
       "id": "W6-Q30",
@@ -390,10 +390,10 @@
       "weekTitle": "Hungering After God",
       "prompt": "A key move in Psalm 42 is the believer learning to:",
       "choices": [
-        "Ignore emotions completely",
-        "Talk to his soul and command hope in God instead of surrendering to despair",
         "Prove faith by never feeling down",
-        "Stop gathering with God’s people"
+        "Talk to his soul and command hope in God instead of surrendering to despair",
+        "Withdraw from God’s people until the mood passes",
+        "Ignore emotions completely as unspiritual"
       ],
       "correctIndex": 1
     }
