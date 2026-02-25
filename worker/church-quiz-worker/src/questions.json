@@ -3,397 +3,392 @@
   "title": "Discipleship Series Quiz Bank",
   "questions": [
     {
-      "id": "W1-Q1",
-      "week": 1,
-      "weekTitle": "Awakened to New Life",
-      "prompt": "What was Jesus correcting when Nicodemus assumed the kingdom could be entered through heritage and religious status?",
+      "id": "W7-Q31",
+      "week": 7,
+      "weekTitle": "Overcoming Anxiety and Fear",
+      "prompt": "In the lesson’s definition, what does it mean to “overcome” fear in Scripture?",
       "choices": [
-        "The belief that birth into Israel guarantees kingdom life",
-        "That stricter morality is the key requirement to qualify",
-        "That temple attendance and reputation automatically secure entrance",
-        "That the kingdom is mainly entered by gaining more religious knowledge"
+        "Learning to trust and stand in the Lord in the middle of fear",
+        "Eliminating every fearful feeling so it never returns",
+        "Proving toughness by acting like nothing affects you",
+        "Avoiding situations that make you nervous at all costs"
       ],
       "correctIndex": 0
     },
     {
-      "id": "W1-Q2",
-      "week": 1,
-      "weekTitle": "Awakened to New Life",
-      "prompt": "In John 3, why does Jesus use “birth” language instead of “try harder” language?",
+      "id": "W7-Q32",
+      "week": 7,
+      "weekTitle": "Overcoming Anxiety and Fear",
+      "prompt": "Psalm 27:1 answers fear primarily by pointing you to:",
       "choices": [
-        "Because religious training naturally produces a new heart over time",
-        "Because spiritual life is received by God’s action, not self-produced",
-        "Because effort and discipline are the main way a person becomes acceptable to God",
-        "Because a person’s family background eventually shapes them into the kingdom"
+        "How strong your willpower is when pressure hits",
+        "Who the Lord is to you—your light, salvation, and strength",
+        "How safe your circumstances become over time",
+        "How other people should treat you to keep you calm"
       ],
       "correctIndex": 1
     },
     {
-      "id": "W1-Q3",
-      "week": 1,
-      "weekTitle": "Awakened to New Life",
-      "prompt": "“Born of water and of the Spirit” most directly points to what theme in the lesson?",
+      "id": "W7-Q33",
+      "week": 7,
+      "weekTitle": "Overcoming Anxiety and Fear",
+      "prompt": "If fear is “driving the bus,” what is the lesson’s implied alternative driver?",
       "choices": [
-        "The outward sign of baptism that normally follows salvation",
-        "A ritual washing that automatically produces salvation",
-        "Cleansing and inward renewal promised by God, accomplished by the Spirit",
-        "The washing power of Scripture alone apart from the Spirit’s work"
+        "Your emotions, as long as they feel sincere",
+        "Your past experience, because it has the most data",
+        "The authority of God’s Word shaping your responses",
+        "Random chance—nothing is really in control anyway"
       ],
       "correctIndex": 2
     },
     {
-      "id": "W1-Q4",
-      "week": 1,
-      "weekTitle": "Awakened to New Life",
-      "prompt": "According to the lesson, what can the “flesh” produce at best?",
+      "id": "W7-Q34",
+      "week": 7,
+      "weekTitle": "Overcoming Anxiety and Fear",
+      "prompt": "Why does Psalm 27:1 start with God’s identity statements before the questions (“Whom shall I fear?”)?",
       "choices": [
-        "A spiritual nature that pleases God without change",
-        "A heart that loves God by nature",
-        "A clean conscience that replaces the need for new birth",
-        "More flesh — behavior polishing without inward rebirth"
-      ],
-      "correctIndex": 3
-    },
-    {
-      "id": "W1-Q5",
-      "week": 1,
-      "weekTitle": "Awakened to New Life",
-      "prompt": "Which statement best matches the “new creature” emphasis tied to 2 Corinthians 5:17?",
-      "choices": [
-        "A believer receives a new center of gravity: new desire and direction under a new Master",
-        "A believer is mainly given a second chance to prove themselves",
-        "A believer becomes immediately perfect in thoughts and actions",
-        "A believer’s past doesn’t matter anymore, so repentance is unnecessary"
+        "Because naming God’s character reframes the threat and grounds confidence",
+        "Because questions are always sinful and should be avoided",
+        "Because danger is usually imaginary if you think positively",
+        "Because David was trying to impress others with religious speech"
       ],
       "correctIndex": 0
     },
-
     {
-      "id": "W2-Q6",
-      "week": 2,
-      "weekTitle": "Repentance: The Posture of Renewal",
-      "prompt": "Acts 3:19 presents repentance and conversion leading to what two outcomes?",
+      "id": "W7-Q35",
+      "week": 7,
+      "weekTitle": "Overcoming Anxiety and Fear",
+      "prompt": "In the lesson, “The LORD is my light” most closely means the Lord:",
       "choices": [
-        "A new set of religious duties to keep for acceptance",
-        "Sins blotted out and times of refreshing from the Lord’s presence",
-        "Immediate public trust and restored reputation",
-        "A guaranteed easier life and fewer struggles"
+        "Gives you good luck when you make the right choices",
+        "Exposes and guides—showing what’s true when confusion presses in",
+        "Makes you feel spiritual by giving you a sudden emotional rush",
+        "Guarantees you will never face hard news again"
       ],
       "correctIndex": 1
     },
     {
-      "id": "W2-Q7",
-      "week": 2,
-      "weekTitle": "Repentance: The Posture of Renewal",
-      "prompt": "In the lesson, repentance is best described as:",
+      "id": "W7-Q36",
+      "week": 7,
+      "weekTitle": "Overcoming Anxiety and Fear",
+      "prompt": "In the lesson’s explanation, “my salvation” in Psalm 27:1 emphasizes:",
       "choices": [
-        "A private regret that matters only if you feel it strongly",
-        "A shame-based punishment that keeps you fearful",
-        "An ongoing posture—turning from sin and toward God as the Spirit works",
-        "A one-time doorway you outgrow once you mature"
-      ],
-      "correctIndex": 2
-    },
-    {
-      "id": "W2-Q8",
-      "week": 2,
-      "weekTitle": "Repentance: The Posture of Renewal",
-      "prompt": "Psalm 51 shows repentance as primarily concerned with:",
-      "choices": [
-        "Avoiding consequences and managing appearances",
-        "Balancing the scales by earning forgiveness through effort",
-        "Proving to others you changed so they accept you again",
-        "Restored fellowship with God and inner cleansing"
-      ],
-      "correctIndex": 3
-    },
-    {
-      "id": "W2-Q9",
-      "week": 2,
-      "weekTitle": "Repentance: The Posture of Renewal",
-      "prompt": "Which pairing reflects the lesson’s warning about the enemy twisting repentance?",
-      "choices": [
-        "Fear: “If I confess, God will reject me” / Pride: “I don’t need to confess; I’m fine”",
-        "Fear: “Only confess small sins” / Pride: “Only confess when caught”",
-        "Fear: “Never admit sin at all” / Pride: “God doesn’t care about sin anyway”",
-        "Fear: “Confess only when you feel strong” / Pride: “Confess so people admire you”"
+        "Rescue and deliverance rooted in the Lord, not in your own cleverness",
+        "A religious label that proves you’re better than others",
+        "A promise that life will be comfortable from now on",
+        "A one-time ritual that automatically fixes your habits"
       ],
       "correctIndex": 0
     },
     {
-      "id": "W2-Q10",
-      "week": 2,
-      "weekTitle": "Repentance: The Posture of Renewal",
-      "prompt": "What does Psalm 51 call “the sacrifices of God”?",
+      "id": "W7-Q37",
+      "week": 7,
+      "weekTitle": "Overcoming Anxiety and Fear",
+      "prompt": "Calling the Lord “the strength of my life” is explained as God being:",
       "choices": [
-        "Giving money to make up for past sin",
-        "A broken spirit and a broken, contrite heart God will not despise",
-        "Public fasting that shows everyone you’re serious",
-        "Religious routine done consistently to earn mercy"
-      ],
-      "correctIndex": 1
-    },
-
-    {
-      "id": "W3-Q11",
-      "week": 3,
-      "weekTitle": "Assurance of Salvation",
-      "prompt": "In 1 John 5:11–13, assurance is grounded primarily in:",
-      "choices": [
-        "Your ability to explain every doctrine without mistakes",
-        "A spotless track record after conversion",
-        "God’s testimony (“record”) about His Son and eternal life",
-        "How powerful your worship feelings are week to week"
-      ],
-      "correctIndex": 2
-    },
-    {
-      "id": "W3-Q12",
-      "week": 3,
-      "weekTitle": "Assurance of Salvation",
-      "prompt": "According to the lesson, “This is the record” functions like:",
-      "choices": [
-        "A slogan meant to motivate you when you’re down",
-        "A private opinion you choose to adopt",
-        "A church tradition that varies by denomination",
-        "A courtroom-like witness statement—God’s sworn testimony"
-      ],
-      "correctIndex": 3
-    },
-    {
-      "id": "W3-Q13",
-      "week": 3,
-      "weekTitle": "Assurance of Salvation",
-      "prompt": "What is the sharp line 1 John draws to clarify who has life?",
-      "choices": [
-        "Those who have the Son have life; those who do not have the Son do not have life",
-        "Those who attend church consistently have life",
-        "Those who avoid doubt completely have life",
-        "Those who behave well have life"
-      ],
-      "correctIndex": 0
-    },
-    {
-      "id": "W3-Q14",
-      "week": 3,
-      "weekTitle": "Assurance of Salvation",
-      "prompt": "In John 10, the believer’s security is pictured as resting in:",
-      "choices": [
-        "The believer’s ability to never stumble again",
-        "The Shepherd’s giving of life and keeping power—no one can pluck them out",
-        "The sheep’s consistency and personal willpower",
-        "The strength of the community holding them accountable"
+        "A distant helper who steps in only after you do your part",
+        "A stronghold/fortress—the One holding your life together",
+        "A motivator who boosts confidence but doesn’t change outcomes",
+        "A principle of positivity you can activate with the right mindset"
       ],
       "correctIndex": 1
     },
     {
-      "id": "W3-Q15",
-      "week": 3,
-      "weekTitle": "Assurance of Salvation",
-      "prompt": "Which statement best reflects the lesson’s view of true assurance?",
+      "id": "W7-Q38",
+      "week": 7,
+      "weekTitle": "Overcoming Anxiety and Fear",
+      "prompt": "Which statement best reflects the lesson’s logic: “If the Lord is my salvation…”",
       "choices": [
-        "Assurance is earned by years of steady obedience",
-        "Assurance is mainly about feeling close to God every day",
-        "Assurance prepares you to tell your testimony with gratitude, not fear",
-        "Assurance means you never have questions or fears again"
-      ],
-      "correctIndex": 2
-    },
-
-    {
-      "id": "W4-Q16",
-      "week": 4,
-      "weekTitle": "Grace: God’s Initiative in Salvation",
-      "prompt": "In Ephesians 2, Paul starts the story of salvation with:",
-      "choices": [
-        "What the church helped you accomplish through discipline",
-        "What your upbringing set you up to become",
-        "What you promised God you would do from now on",
-        "What God did—He “quickened” (made alive) the dead"
-      ],
-      "correctIndex": 3
-    },
-    {
-      "id": "W4-Q17",
-      "week": 4,
-      "weekTitle": "Grace: God’s Initiative in Salvation",
-      "prompt": "The lesson describes grace as:",
-      "choices": [
-        "God coming all the way to the dead and bound, giving life where there was none",
-        "God meeting you halfway if you prove sincerity",
-        "God rewarding your improvement after you clean yourself up",
-        "God overlooking sin without ever dealing with justice"
-      ],
-      "correctIndex": 0
-    },
-    {
-      "id": "W4-Q18",
-      "week": 4,
-      "weekTitle": "Grace: God’s Initiative in Salvation",
-      "prompt": "“Not of works, lest any man should boast” is used to show:",
-      "choices": [
-        "Only certain religious works count toward acceptance",
-        "God saves in a way that shuts down pride and self-congratulation",
-        "Works can earn salvation if you maintain them long enough",
-        "Works are meaningless and should be avoided"
+        "Then I can ignore consequences and do what I want",
+        "Then no enemy gets to decide my destiny apart from God’s permission",
+        "Then I won’t need other believers in my life",
+        "Then I should never admit fear out loud"
       ],
       "correctIndex": 1
     },
     {
-      "id": "W4-Q19",
-      "week": 4,
-      "weekTitle": "Grace: God’s Initiative in Salvation",
-      "prompt": "According to the lesson, good works are:",
+      "id": "W7-Q39",
+      "week": 7,
+      "weekTitle": "Overcoming Anxiety and Fear",
+      "prompt": "According to the lesson, fear is not finally answered by:",
       "choices": [
-        "The root cause of salvation",
-        "A way to keep salvation once you’ve received it",
-        "The fruit of being God’s workmanship—created in Christ to walk in them",
-        "A substitute for repentance and faith"
-      ],
-      "correctIndex": 2
-    },
-    {
-      "id": "W4-Q20",
-      "week": 4,
-      "weekTitle": "Grace: God’s Initiative in Salvation",
-      "prompt": "The “bedrock” beneath new birth, repentance, and assurance is:",
-      "choices": [
-        "Human determination and willpower",
-        "Religious ceremony that seals salvation",
-        "Spiritual experiences that confirm your worthiness",
-        "Grace—God’s initiative in salvation"
-      ],
-      "correctIndex": 3
-    },
-
-    {
-      "id": "W5-Q21",
-      "week": 5,
-      "weekTitle": "Faith that Lives and Trusts",
-      "prompt": "Hebrews 11 presents faith as “substance” and “evidence.” In the lesson, that means faith:",
-      "choices": [
-        "Makes God’s promised realities weighty and present, even when unseen",
-        "Is mainly confidence that things will work out if you stay positive",
-        "Is the same thing as certainty you’ll never struggle again",
-        "Is blind guessing with no reason"
-      ],
-      "correctIndex": 0
-    },
-    {
-      "id": "W5-Q22",
-      "week": 5,
-      "weekTitle": "Faith that Lives and Trusts",
-      "prompt": "In the lesson’s framing, Hebrews 11 is primarily:",
-      "choices": [
-        "A chapter mainly about celebrating human greatness",
-        "Battlefield encouragement to endure when obedience is costly",
-        "A detached inspirational chapter for posters",
-        "A list meant to entertain more than instruct"
+        "Clarifying who God is and trusting Him personally",
+        "Pumping yourself up with self-confidence and toughness",
+        "Turning your eyes higher than the danger to God over it",
+        "Making David’s confession your own by faith"
       ],
       "correctIndex": 1
     },
     {
-      "id": "W5-Q23",
-      "week": 5,
-      "weekTitle": "Faith that Lives and Trusts",
-      "prompt": "“Without faith it is impossible to please him” is explained as:",
+      "id": "W7-Q40",
+      "week": 7,
+      "weekTitle": "Overcoming Anxiety and Fear",
+      "prompt": "The lesson says a man can quote verses and still be ruled by fear if he never learns to say:",
       "choices": [
-        "Faith being optional as long as you do good works",
-        "Faith being mostly an emotional feeling of closeness",
-        "Faith being the fitting posture toward the living God who has spoken",
-        "God only accepts people who never fail"
+        "“I will do better this time, no matter what”",
+        "“My circumstances will surely improve soon”",
+        "“He is mine, and I am His”",
+        "“People should respect me so I can calm down”"
       ],
       "correctIndex": 2
     },
     {
-      "id": "W5-Q24",
-      "week": 5,
-      "weekTitle": "Faith that Lives and Trusts",
-      "prompt": "According to Hebrews 11:6, faith includes believing:",
+      "id": "W7-Q41",
+      "week": 7,
+      "weekTitle": "Overcoming Anxiety and Fear",
+      "prompt": "From the psychological section, fear and anxiety are described first as:",
       "choices": [
-        "God overlooks unbelief as long as you’re sincere",
-        "God exists and can be controlled if you say the right words",
-        "God only helps people who help themselves first",
-        "God is, and He rewards those who diligently seek Him"
-      ],
-      "correctIndex": 3
-    },
-    {
-      "id": "W5-Q25",
-      "week": 5,
-      "weekTitle": "Faith that Lives and Trusts",
-      "prompt": "Galatians 2:20 is used to show that faith is not only how you start with Christ, but how you:",
-      "choices": [
-        "Live daily—“Christ liveth in me” shaping identity and obedience",
-        "Avoid hardship by staying confident",
-        "Replace repentance with self-assurance",
-        "Earn spiritual status through discipline"
-      ],
-      "correctIndex": 0
-    },
-
-    {
-      "id": "W6-Q26",
-      "week": 6,
-      "weekTitle": "Hungering After God",
-      "prompt": "In Matthew 5:6, Jesus blesses those who hunger and thirst after:",
-      "choices": [
-        "Religious knowledge and spiritual experiences",
-        "Righteousness—what aligns with God’s will and character",
-        "Approval from others that proves you’re doing well",
-        "Comfort and success"
+        "Proof you are weak or “crazy”",
+        "A normal alarm system God designed for survival that can get stuck on",
+        "A sign you should isolate until you feel better",
+        "Evidence you don’t really love God"
       ],
       "correctIndex": 1
     },
     {
-      "id": "W6-Q27",
-      "week": 6,
-      "weekTitle": "Hungering After God",
-      "prompt": "The lesson stresses hunger is not:",
+      "id": "W7-Q42",
+      "week": 7,
+      "weekTitle": "Overcoming Anxiety and Fear",
+      "prompt": "Fight, flight, or freeze is mentioned to show that anxiety often involves:",
       "choices": [
-        "A sign of life",
-        "Something God intends to satisfy over time",
-        "Something you must manufacture through hype",
-        "Something you can feel during dryness"
-      ],
-      "correctIndex": 2
-    },
-    {
-      "id": "W6-Q28",
-      "week": 6,
-      "weekTitle": "Hungering After God",
-      "prompt": "The promise “they shall be filled” is explained as:",
-      "choices": [
-        "A guarantee of constant emotional highs",
-        "Proof that mature believers never struggle again",
-        "A reward mainly for disciplined personalities",
-        "God Himself filling the hunger He creates; satisfaction found where God says it is"
-      ],
-      "correctIndex": 3
-    },
-    {
-      "id": "W6-Q29",
-      "week": 6,
-      "weekTitle": "Hungering After God",
-      "prompt": "Psalm 42’s deer imagery (“panteth”) is used to picture:",
-      "choices": [
-        "A soul gasping with real need for the living God",
-        "A calm, casual interest in God",
-        "A person who has outgrown worship and no longer needs it",
-        "A believer who never experiences discouragement"
+        "A body response that treats imagined or remembered danger like present danger",
+        "A spiritual gift that only certain Christians have",
+        "A problem solved mainly by pretending nothing happened",
+        "A guarantee that you will make the best decision under pressure"
       ],
       "correctIndex": 0
     },
     {
-      "id": "W6-Q30",
-      "week": 6,
-      "weekTitle": "Hungering After God",
-      "prompt": "A key move in Psalm 42 is the believer learning to:",
+      "id": "W7-Q43",
+      "week": 7,
+      "weekTitle": "Overcoming Anxiety and Fear",
+      "prompt": "In reentry, “hypervigilance” is described as:",
       "choices": [
-        "Prove faith by never feeling down",
-        "Talk to his soul and command hope in God instead of surrendering to despair",
-        "Withdraw from God’s people until the mood passes",
-        "Ignore emotions completely as unspiritual"
+        "Getting bored because life feels too quiet",
+        "Constantly scanning for threats, waiting for disrespect or bad news",
+        "Refusing to ever think about the future",
+        "Being naturally fearless because you’ve “seen it all”"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "W7-Q44",
+      "week": 7,
+      "weekTitle": "Overcoming Anxiety and Fear",
+      "prompt": "The lesson describes anxious “what if” thinking as:",
+      "choices": [
+        "A helpful tool that always prepares you for the best outcome",
+        "The mind running worst-case scenarios on repeat while the body reacts as if it’s happening",
+        "A sin because questions are never allowed",
+        "A sign that your faith is fake in every case"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "W7-Q45",
+      "week": 7,
+      "weekTitle": "Overcoming Anxiety and Fear",
+      "prompt": "Which is an example of fear “wearing a mask,” as described in the lesson?",
+      "choices": [
+        "Quiet worry showing up as anger or intimidation on the surface",
+        "Confidence showing up as generosity and patience",
+        "Peace showing up as steadiness under pressure",
+        "Joy showing up as gratitude in hardship"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "W7-Q46",
+      "week": 7,
+      "weekTitle": "Overcoming Anxiety and Fear",
+      "prompt": "Past trauma is said to sometimes “wire” the brain to:",
+      "choices": [
+        "Expect danger in relationships and react with anxiety when someone gets close",
+        "Become immune to fear forever",
+        "Forget painful memories completely once you join a program",
+        "Trust everyone automatically as a sign of healing"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "W7-Q47",
+      "week": 7,
+      "weekTitle": "Overcoming Anxiety and Fear",
+      "prompt": "The lesson says people handle anxiety better when they have:",
+      "choices": [
+        "Safe relationships, predictable routines, and healthy calming practices",
+        "More social media input and constant news updates",
+        "No rules so they can express themselves freely",
+        "Pressure to act tough so nobody sees weakness"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "W7-Q48",
+      "week": 7,
+      "weekTitle": "Overcoming Anxiety and Fear",
+      "prompt": "Why does the lesson say psychological tools have limits?",
+      "choices": [
+        "Because breathing and routines never help at all",
+        "Because they can’t answer the deepest question of control and ultimate safety",
+        "Because Christians should reject all insights about the body and mind",
+        "Because fear is always cured instantly if you try hard enough"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "W7-Q49",
+      "week": 7,
+      "weekTitle": "Overcoming Anxiety and Fear",
+      "prompt": "In the integration section, psychology mainly describes:",
+      "choices": [
+        "How anxiety affects body and mind",
+        "How to earn righteousness through discipline",
+        "How to interpret prophecies about the future",
+        "How to avoid all emotions as unspiritual"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "W7-Q50",
+      "week": 7,
+      "weekTitle": "Overcoming Anxiety and Fear",
+      "prompt": "In the integration section, theology adds which deeper test to anxious thoughts?",
+      "choices": [
+        "“Does this thought line up with who God is and what He has promised?”",
+        "“Does this thought make me feel strong and in control?”",
+        "“Will this thought keep people from correcting me?”",
+        "“Can I prove this thought is always true by my past?”"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "W7-Q51",
+      "week": 7,
+      "weekTitle": "Overcoming Anxiety and Fear",
+      "prompt": "The lesson contrasts “reasonable thinking” with a deeper shift toward:",
+      "choices": [
+        "Being more suspicious so you aren’t surprised",
+        "Man-centered thinking to God-centered thinking",
+        "Ignoring the body and focusing only on feelings",
+        "Letting fear decide quickly so you don’t hesitate"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "W7-Q52",
+      "week": 7,
+      "weekTitle": "Overcoming Anxiety and Fear",
+      "prompt": "When fear rises in the house, the lesson recommends first learning to:",
+      "choices": [
+        "Blame someone else so you feel justified",
+        "Pause, recognize what’s happening, and turn upward in prayer",
+        "Make a snap decision before anyone can challenge you",
+        "Withdraw completely so nobody can see weakness"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "W7-Q53",
+      "week": 7,
+      "weekTitle": "Overcoming Anxiety and Fear",
+      "prompt": "Which practice best matches the week’s application: “fear inventory”?",
+      "choices": [
+        "Listing fears honestly, then pairing each one with Psalm 27:1 as a faith response",
+        "Listing fears to prove you have more problems than others",
+        "Listing fears so you can avoid anything uncomfortable this week",
+        "Listing fears and then trying to forget them immediately"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "W7-Q54",
+      "week": 7,
+      "weekTitle": "Overcoming Anxiety and Fear",
+      "prompt": "Why does the lesson say the goal is not to “magically erase” fear?",
+      "choices": [
+        "Because fear is always good and should be obeyed",
+        "Because the goal is connecting real anxieties to the real God who stands over them",
+        "Because Scripture has nothing to say about emotions",
+        "Because fear cannot change in any way"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "W7-Q55",
+      "week": 7,
+      "weekTitle": "Overcoming Anxiety and Fear",
+      "prompt": "If fear tends to come out as anger when you feel disrespected, the lesson’s suggested response is to:",
+      "choices": [
+        "Pause and pray before responding, choosing a different response because the Lord is your strength",
+        "Prove you’re not weak by escalating the conflict",
+        "Ignore the situation and pretend you don’t care",
+        "Keep the anger inside until it blows up later"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "W7-Q56",
+      "week": 7,
+      "weekTitle": "Overcoming Anxiety and Fear",
+      "prompt": "The lesson says anxiety often shrinks when it is brought into:",
+      "choices": [
+        "A private space where nobody can challenge you",
+        "The light of God’s Word and the support of God’s people",
+        "A loud argument so you can win the point",
+        "A constant distraction so you never have to think"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "W7-Q57",
+      "week": 7,
+      "weekTitle": "Overcoming Anxiety and Fear",
+      "prompt": "How does the lesson frame overcoming fear as part of discipleship?",
+      "choices": [
+        "It’s mainly a self-improvement project to earn respect",
+        "It trains you to steady others later, turning your story into a strengthening testimony",
+        "It proves you are naturally braver than other men",
+        "It removes your need for community because you become independent"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "W7-Q58",
+      "week": 7,
+      "weekTitle": "Overcoming Anxiety and Fear",
+      "prompt": "In the narrative assignment, personalizing Psalm 27:1 is meant to help you:",
+      "choices": [
+        "Treat the verse as poetry without practical use",
+        "Make God’s truth personal—moving from general ideas to lived confession",
+        "Show off your Bible knowledge to others",
+        "Replace prayer with journaling"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "W7-Q59",
+      "week": 7,
+      "weekTitle": "Overcoming Anxiety and Fear",
+      "prompt": "“Breathing Psalm 27:1” is described as:",
+      "choices": [
+        "A mystical chant to manipulate spiritual energy",
+        "A way to tie your breath to God’s Word so your body learns calm in response to Scripture",
+        "A substitute for trusting God in real situations",
+        "A technique that only works if you never feel fear at all"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "W7-Q60",
+      "week": 7,
+      "weekTitle": "Overcoming Anxiety and Fear",
+      "prompt": "Which summary best matches the closing encouragement of the lesson?",
+      "choices": [
+        "Fear disqualifies you from walking with God until you fix it",
+        "God is not surprised by your fear; He invites you to bring it to Him and learn where to run",
+        "The best way to beat fear is to become harder and more detached",
+        "If you struggle with fear, you should stay silent to avoid shame"
       ],
       "correctIndex": 1
     }
