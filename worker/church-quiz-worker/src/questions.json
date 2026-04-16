@@ -1,1 +1,475 @@
+{
+  "version": 1,
+  "title": "Discipleship Series Quiz Bank",
+  "questions": [
+    {
+      "id": "W10-Q01",
+      "week": 10,
+      "weekTitle": "Building a New Identity",
+      "prompt": "What is the main reason the lesson says identity must be rebuilt for change to last?",
+      "choices": [
+        "Because real change requires a new set of rules to follow consistently",
+        "Because identity shapes behavior, and old identity quietly pulls you back under pressure",
+        "Because you need a clean reputation before you can live differently",
+        "Because once your circumstances improve, your identity will naturally improve"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "W10-Q02",
+      "week": 10,
+      "weekTitle": "Building a New Identity",
+      "prompt": "The lesson is careful to say “new identity in Christ” does NOT mean:",
+      "choices": [
+        "You ignore consequences and pretend your past never happened",
+        "You stop being defined by old labels at the deepest level",
+        "You learn to live from what God says is true",
+        "You make choices that fit who you are becoming"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "W10-Q03",
+      "week": 10,
+      "weekTitle": "Building a New Identity",
+      "prompt": "According to the lesson’s explanation of 2 Corinthians 5:17, being “a new creature” is best understood as:",
+      "choices": [
+        "A gradual self-improvement project that becomes true after enough good behavior",
+        "A new spiritual reality God creates in a person who is in Christ",
+        "A new public image that helps you earn trust faster",
+        "A stronger personality that makes temptation easier to resist"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "W10-Q04",
+      "week": 10,
+      "weekTitle": "Building a New Identity",
+      "prompt": "In the lesson, “If any man…” is emphasized to show:",
+      "choices": [
+        "Only people with a clean record can claim new life in Christ",
+        "This promise is mainly for people who grew up in church",
+        "No category of sinner is excluded from the promise if he is in Christ",
+        "The verse is aimed at spiritual leaders more than ordinary believers"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "W10-Q05",
+      "week": 10,
+      "weekTitle": "Building a New Identity",
+      "prompt": "Which statement best reflects how the lesson contrasts “in Christ” with “trying harder”?",
+      "choices": [
+        "In Christ means God gives a new identity that does not depend on your performance",
+        "In Christ means you feel new most days if you stay disciplined",
+        "In Christ means you avoid all old triggers and environments",
+        "In Christ means you become morally superior to your past"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "W10-Q06",
+      "week": 10,
+      "weekTitle": "Building a New Identity",
+      "prompt": "When the lesson says “old things are passed away,” the best interpretation is:",
+      "choices": [
+        "Your legal record is erased and relationships instantly reset",
+        "Old patterns and labels no longer define who you truly are in God’s sight",
+        "Your memories disappear so you don’t feel shame anymore",
+        "Your temptations stop because the old nature is gone completely"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "W10-Q07",
+      "week": 10,
+      "weekTitle": "Building a New Identity",
+      "prompt": "The lesson’s point about “Behold, all things are become new” is mainly that:",
+      "choices": [
+        "Every circumstance changes immediately if your faith is strong enough",
+        "Your deepest standing and identity before God are new, even if circumstances lag",
+        "God gives new opportunities first, then identity follows",
+        "New identity is mostly a mindset technique to stay positive"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "W10-Q08",
+      "week": 10,
+      "weekTitle": "Building a New Identity",
+      "prompt": "Which idea best captures the lesson’s definition of shame-based identity?",
+      "choices": [
+        "Shame says, “I did wrong,” and motivates improvement",
+        "Shame says, “I am wrong,” and pushes a person to live down to his worst labels",
+        "Shame is mainly a sign you’re becoming spiritually mature",
+        "Shame is useful because it keeps people from making mistakes"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "W10-Q09",
+      "week": 10,
+      "weekTitle": "Building a New Identity",
+      "prompt": "The lesson teaches that social labels like “felon” or “addict” are dangerous mainly because:",
+      "choices": [
+        "They are always inaccurate and should never be used",
+        "They can sink into self-concept and shape decisions: “this is what guys like me do”",
+        "They are illegal for anyone to say once you’re out",
+        "They prove society is the main cause of sin"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "W10-Q10",
+      "week": 10,
+      "weekTitle": "Building a New Identity",
+      "prompt": "Psychology can encourage “rewrite your story,” but the lesson says it cannot provide an unshakable identity because:",
+      "choices": [
+        "It usually anchors identity in self-will, achievement, or desire—things that can fail or be taken",
+        "It discourages responsibility and makes people blame their past",
+        "It focuses only on feelings and ignores actions",
+        "It denies that identity affects behavior"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "W10-Q11",
+      "week": 10,
+      "weekTitle": "Building a New Identity",
+      "prompt": "The “integration” section agrees with psychology on what key point?",
+      "choices": [
+        "Identity shapes behavior, so changing identity changes choices",
+        "People can heal without community if they are disciplined enough",
+        "Shame is the best tool for long-term growth",
+        "The past must be forgotten or healing can’t happen"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "W10-Q12",
+      "week": 10,
+      "weekTitle": "Building a New Identity",
+      "prompt": "Which response best matches the lesson’s recommended way to fight a shame-lie like “You’re still the same”?",
+      "choices": [
+        "Ignore the thought and distract yourself until it fades",
+        "Argue with people so they stop reminding you of your past",
+        "Answer with Scripture-truth: old things passed away; I will not agree with that lie",
+        "Promise yourself you will never fail again"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "W10-Q13",
+      "week": 10,
+      "weekTitle": "Building a New Identity",
+      "prompt": "The lesson says the Christian life is not working your way into being new, but:",
+      "choices": [
+        "Working out what is already true because God has made you new in Christ",
+        "Working until you feel new, then you can act new",
+        "Working to prove to people you’ve changed so God will accept you",
+        "Working to erase consequences so the past no longer matters"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "W10-Q14",
+      "week": 10,
+      "weekTitle": "Building a New Identity",
+      "prompt": "Which practical choice best fits “living from new identity” in the house?",
+      "choices": [
+        "Doing chores only when someone is watching so you look consistent",
+        "Serving without being asked because you belong to Christ who served you",
+        "Avoiding responsibility so you don’t risk failure",
+        "Keeping your struggles private so you appear strong"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "W10-Q15",
+      "week": 10,
+      "weekTitle": "Building a New Identity",
+      "prompt": "The lesson’s phrase “not a repaired version of the old you” is mainly teaching that God is:",
+      "choices": [
+        "Mostly improving your circumstances so you can restart life",
+        "Creating a new spiritual reality, not just polishing the old man",
+        "Helping you build a better public image than before",
+        "Making you immune to temptation once you mature"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "W10-Q16",
+      "week": 10,
+      "weekTitle": "Building a New Identity",
+      "prompt": "The “In Christ Confession” practice is described as:",
+      "choices": [
+        "Positive thinking that works if you say it with enough energy",
+        "Agreeing out loud with what God has said, even when feelings disagree",
+        "A ritual that replaces repentance and daily obedience",
+        "A way to prove your faith to others"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "W10-Q17",
+      "week": 10,
+      "weekTitle": "Building a New Identity",
+      "prompt": "The lesson warns that if you still believe “I am what I did,” pressure will likely produce:",
+      "choices": [
+        "More confidence because you know your limits",
+        "A drift back into the life that fits that belief",
+        "A desire to serve others to make up for the past",
+        "A deeper interest in theology and study"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "W10-Q18",
+      "week": 10,
+      "weekTitle": "Building a New Identity",
+      "prompt": "Which statement best captures the closing encouragement of Week 10?",
+      "choices": [
+        "Your identity rests on Christ’s finished work; when you fail, return to the cross and keep building",
+        "Once you claim a new identity, you should never feel like the old man again",
+        "Your identity becomes secure when others fully trust you",
+        "The program itself is what makes you new"
+      ],
+      "correctIndex": 0
+    },
 
+    {
+      "id": "W11-Q19",
+      "week": 11,
+      "weekTitle": "Fellowship and the Body",
+      "prompt": "The lesson’s main claim about fellowship is that it is:",
+      "choices": [
+        "An optional activity for believers who are extra serious",
+        "A core part of what it means to be joined to Christ and His people",
+        "Helpful mainly for networking and job opportunities",
+        "A substitute for personal prayer and Bible reading"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "W11-Q20",
+      "week": 11,
+      "weekTitle": "Fellowship and the Body",
+      "prompt": "Romans 12:4–5 is used to teach that believers are:",
+      "choices": [
+        "One body in Christ and members one of another",
+        "One body because they share similar backgrounds and values",
+        "One body if they attend the same meetings consistently",
+        "One body only after they prove long-term stability"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "W11-Q21",
+      "week": 11,
+      "weekTitle": "Fellowship and the Body",
+      "prompt": "In the lesson, “members one of another” means:",
+      "choices": [
+        "We should all have the same opinions to stay united",
+        "We belong to each other in a real spiritual way; what we do affects the body",
+        "We should keep relationships shallow to avoid conflict",
+        "We are responsible to control each other’s decisions"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "W11-Q22",
+      "week": 11,
+      "weekTitle": "Fellowship and the Body",
+      "prompt": "1 Corinthians 12 emphasizes that unity in the church is created primarily by:",
+      "choices": [
+        "Shared preferences and shared lifestyles",
+        "Strong leadership and strict rules",
+        "One Spirit placing believers into one body",
+        "Consistent meeting attendance over time"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "W11-Q23",
+      "week": 11,
+      "weekTitle": "Fellowship and the Body",
+      "prompt": "The lesson uses the body picture to correct which mindset most directly?",
+      "choices": [
+        "Both inferiority (“I don’t matter”) and independence (“I don’t need you”)",
+        "Only laziness and lack of motivation",
+        "Only doctrinal confusion about salvation",
+        "Only fear of speaking in public"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "W11-Q24",
+      "week": 11,
+      "weekTitle": "Fellowship and the Body",
+      "prompt": "Which statement best matches the lesson’s point about diversity in the body?",
+      "choices": [
+        "Differences are a problem, so unity requires sameness",
+        "Differences exist by God’s design; the body needs many kinds of members to function",
+        "Differences are acceptable as long as nobody serves publicly",
+        "Differences matter mostly for personality, not spiritual life"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "W11-Q25",
+      "week": 11,
+      "weekTitle": "Fellowship and the Body",
+      "prompt": "When the lesson says “the eye cannot say to the hand, I have no need of thee,” it is mainly confronting:",
+      "choices": [
+        "Comparison that produces shame and withdrawal",
+        "Pride that produces independence and dismissal of others",
+        "Fear that produces silence in group settings",
+        "Immaturity that produces too many questions"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "W11-Q26",
+      "week": 11,
+      "weekTitle": "Fellowship and the Body",
+      "prompt": "According to the lesson, the “feeble” members being “necessary” teaches that:",
+      "choices": [
+        "Weakness is proof someone should step back from involvement",
+        "Every member matters; even those who seem small or weak have a necessary place",
+        "Only gifted members should be visible to keep the body strong",
+        "People with rough pasts should stay on the edges until they feel ready"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "W11-Q27",
+      "week": 11,
+      "weekTitle": "Fellowship and the Body",
+      "prompt": "The lesson describes real fellowship most closely as:",
+      "choices": [
+        "Shared burdens and shared joys—suffering together and rejoicing together",
+        "Attending the same services and keeping conversations polite",
+        "Agreeing to avoid hard topics so peace is maintained",
+        "Helping only when asked so boundaries stay clear"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "W11-Q28",
+      "week": 11,
+      "weekTitle": "Fellowship and the Body",
+      "prompt": "Psychologically, the lesson says men often struggle with fellowship because they learned:",
+      "choices": [
+        "Trust is dangerous; caring leads to hurt, so distance feels safer",
+        "Group life is too boring to maintain long-term",
+        "Faith is mainly private and shouldn’t be shared",
+        "Accountability is unnecessary once a man prays"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "W11-Q29",
+      "week": 11,
+      "weekTitle": "Fellowship and the Body",
+      "prompt": "From a recovery perspective, the lesson says community helps change largely because it provides:",
+      "choices": [
+        "A place to be honest without being alone, accountability, examples, and opportunities to help others",
+        "A quick fix that eliminates temptation through social pressure",
+        "A way to earn acceptance from God through participation",
+        "A substitute for personal responsibility"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "W11-Q30",
+      "week": 11,
+      "weekTitle": "Fellowship and the Body",
+      "prompt": "The lesson describes “hyper-independence” (I don’t need anybody) as:",
+      "choices": [
+        "A mature sign that a man is ready to be released early",
+        "A survival strategy that increases relapse risk by cutting off healthy support",
+        "A spiritual discipline that protects a man from bad influences",
+        "A personality type that can’t be changed"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "W11-Q31",
+      "week": 11,
+      "weekTitle": "Fellowship and the Body",
+      "prompt": "In the integration section, theology strengthens the community idea by teaching that:",
+      "choices": [
+        "God saves individuals but leaves community as an optional add-on",
+        "Belonging is rooted in Christ and the Spirit placing you into His body, not just social preference",
+        "Community works mainly because it increases motivation and self-esteem",
+        "The best fellowship is avoiding people who challenge you"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "W11-Q32",
+      "week": 11,
+      "weekTitle": "Fellowship and the Body",
+      "prompt": "The lesson says the program’s structure (shared living, group, worship, mentorship) is best understood as:",
+      "choices": [
+        "A set of add-ons that help if you personally enjoy them",
+        "A strategy to keep men busy so they don’t relapse",
+        "An expression of a biblical reality: learning to live as members of one body",
+        "A replacement for personal conviction and prayer"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "W11-Q33",
+      "week": 11,
+      "weekTitle": "Fellowship and the Body",
+      "prompt": "When fellowship exposes conflict and “rough edges,” the lesson’s best framing is:",
+      "choices": [
+        "Proof you don’t belong, so you should pull back to protect yourself",
+        "A training ground where the new man learns to listen, apologize, forgive, and work through issues",
+        "A sign leadership is failing and rules need to tighten",
+        "Evidence that community is too risky for most people"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "W11-Q34",
+      "week": 11,
+      "weekTitle": "Fellowship and the Body",
+      "prompt": "Which daily action most fits the lesson’s “One-Another Practice”?",
+      "choices": [
+        "Pick one brother daily and practice a simple one-another act: encourage, pray, bear burdens, forgive, or serve",
+        "Try to fix everyone’s problems so the house runs smoothly",
+        "Avoid weaker members so you don’t get pulled down",
+        "Stay quiet and focus only on your own growth this week"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "W11-Q35",
+      "week": 11,
+      "weekTitle": "Fellowship and the Body",
+      "prompt": "The lesson’s most direct warning about living the Christian life as a “solo project” is that:",
+      "choices": [
+        "You will likely drift back into old ways of thinking and living",
+        "You will lose your salvation over time",
+        "You will become too dependent on others to mature",
+        "You will stop needing discipline and structure"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "W11-Q36",
+      "week": 11,
+      "weekTitle": "Fellowship and the Body",
+      "prompt": "Which statement best matches the closing pastoral encouragement of Week 11?",
+      "choices": [
+        "Real fellowship is too risky, so keep relationships minimal and safe",
+        "God saved you into a body; don’t let conflict push you back into isolation—risk belonging under Christ",
+        "The goal is to become independent enough that community no longer matters",
+        "The body works best when only leaders carry burdens"
+      ],
+      "correctIndex": 1
+    }
+  ]
+}
