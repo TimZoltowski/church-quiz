@@ -3,392 +3,471 @@
   "title": "Discipleship Series Quiz Bank",
   "questions": [
     {
-      "id": "W7-Q31",
-      "week": 7,
-      "weekTitle": "Overcoming Anxiety and Fear",
-      "prompt": "In the lesson’s definition, what does it mean to “overcome” fear in Scripture?",
+      "id": "W10-Q01",
+      "week": 10,
+      "weekTitle": "Building a New Identity",
+      "prompt": "What is the main reason the lesson says identity must be rebuilt for change to last?",
       "choices": [
-        "Learning to trust and stand in the Lord in the middle of fear",
-        "Eliminating every fearful feeling so it never returns",
-        "Proving toughness by acting like nothing affects you",
-        "Avoiding situations that make you nervous at all costs"
-      ],
-      "correctIndex": 0
-    },
-    {
-      "id": "W7-Q32",
-      "week": 7,
-      "weekTitle": "Overcoming Anxiety and Fear",
-      "prompt": "Psalm 27:1 answers fear primarily by pointing you to:",
-      "choices": [
-        "How strong your willpower is when pressure hits",
-        "Who the Lord is to you—your light, salvation, and strength",
-        "How safe your circumstances become over time",
-        "How other people should treat you to keep you calm"
+        "Because real change requires a new set of rules to follow consistently",
+        "Because identity shapes behavior, and old identity quietly pulls you back under pressure",
+        "Because you need a clean reputation before you can live differently",
+        "Because once your circumstances improve, your identity will naturally improve"
       ],
       "correctIndex": 1
     },
     {
-      "id": "W7-Q33",
-      "week": 7,
-      "weekTitle": "Overcoming Anxiety and Fear",
-      "prompt": "If fear is “driving the bus,” what is the lesson’s implied alternative driver?",
+      "id": "W10-Q02",
+      "week": 10,
+      "weekTitle": "Building a New Identity",
+      "prompt": "The lesson is careful to say “new identity in Christ” does NOT mean:",
       "choices": [
-        "Your emotions, as long as they feel sincere",
-        "Your past experience, because it has the most data",
-        "The authority of God’s Word shaping your responses",
-        "Random chance—nothing is really in control anyway"
+        "You ignore consequences and pretend your past never happened",
+        "You stop being defined by old labels at the deepest level",
+        "You learn to live from what God says is true",
+        "You make choices that fit who you are becoming"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "W10-Q03",
+      "week": 10,
+      "weekTitle": "Building a New Identity",
+      "prompt": "According to the lesson’s explanation of 2 Corinthians 5:17, being “a new creature” is best understood as:",
+      "choices": [
+        "A gradual self-improvement project that becomes true after enough good behavior",
+        "A new spiritual reality God creates in a person who is in Christ",
+        "A new public image that helps you earn trust faster",
+        "A stronger personality that makes temptation easier to resist"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "W10-Q04",
+      "week": 10,
+      "weekTitle": "Building a New Identity",
+      "prompt": "In the lesson, “If any man…” is emphasized to show:",
+      "choices": [
+        "Only people with a clean record can claim new life in Christ",
+        "This promise is mainly for people who grew up in church",
+        "No category of sinner is excluded from the promise if he is in Christ",
+        "The verse is aimed at spiritual leaders more than ordinary believers"
       ],
       "correctIndex": 2
     },
     {
-      "id": "W7-Q34",
-      "week": 7,
-      "weekTitle": "Overcoming Anxiety and Fear",
-      "prompt": "Why does Psalm 27:1 start with God’s identity statements before the questions (“Whom shall I fear?”)?",
+      "id": "W10-Q05",
+      "week": 10,
+      "weekTitle": "Building a New Identity",
+      "prompt": "Which statement best reflects how the lesson contrasts “in Christ” with “trying harder”?",
       "choices": [
-        "Because naming God’s character reframes the threat and grounds confidence",
-        "Because questions are always sinful and should be avoided",
-        "Because danger is usually imaginary if you think positively",
-        "Because David was trying to impress others with religious speech"
+        "In Christ means God gives a new identity that does not depend on your performance",
+        "In Christ means you feel new most days if you stay disciplined",
+        "In Christ means you avoid all old triggers and environments",
+        "In Christ means you become morally superior to your past"
       ],
       "correctIndex": 0
     },
     {
-      "id": "W7-Q35",
-      "week": 7,
-      "weekTitle": "Overcoming Anxiety and Fear",
-      "prompt": "In the lesson, “The LORD is my light” most closely means the Lord:",
+      "id": "W10-Q06",
+      "week": 10,
+      "weekTitle": "Building a New Identity",
+      "prompt": "When the lesson says “old things are passed away,” the best interpretation is:",
       "choices": [
-        "Gives you good luck when you make the right choices",
-        "Exposes and guides—showing what’s true when confusion presses in",
-        "Makes you feel spiritual by giving you a sudden emotional rush",
-        "Guarantees you will never face hard news again"
+        "Your legal record is erased and relationships instantly reset",
+        "Old patterns and labels no longer define who you truly are in God’s sight",
+        "Your memories disappear so you don’t feel shame anymore",
+        "Your temptations stop because the old nature is gone completely"
       ],
       "correctIndex": 1
     },
     {
-      "id": "W7-Q36",
-      "week": 7,
-      "weekTitle": "Overcoming Anxiety and Fear",
-      "prompt": "In the lesson’s explanation, “my salvation” in Psalm 27:1 emphasizes:",
+      "id": "W10-Q07",
+      "week": 10,
+      "weekTitle": "Building a New Identity",
+      "prompt": "The lesson’s point about “Behold, all things are become new” is mainly that:",
       "choices": [
-        "Rescue and deliverance rooted in the Lord, not in your own cleverness",
-        "A religious label that proves you’re better than others",
-        "A promise that life will be comfortable from now on",
-        "A one-time ritual that automatically fixes your habits"
+        "Every circumstance changes immediately if your faith is strong enough",
+        "Your deepest standing and identity before God are new, even if circumstances lag",
+        "God gives new opportunities first, then identity follows",
+        "New identity is mostly a mindset technique to stay positive"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "W10-Q08",
+      "week": 10,
+      "weekTitle": "Building a New Identity",
+      "prompt": "Which idea best captures the lesson’s definition of shame-based identity?",
+      "choices": [
+        "Shame says, “I did wrong,” and motivates improvement",
+        "Shame says, “I am wrong,” and pushes a person to live down to his worst labels",
+        "Shame is mainly a sign you’re becoming spiritually mature",
+        "Shame is useful because it keeps people from making mistakes"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "W10-Q09",
+      "week": 10,
+      "weekTitle": "Building a New Identity",
+      "prompt": "The lesson teaches that social labels like “felon” or “addict” are dangerous mainly because:",
+      "choices": [
+        "They are always inaccurate and should never be used",
+        "They can sink into self-concept and shape decisions: “this is what guys like me do”",
+        "They are illegal for anyone to say once you’re out",
+        "They prove society is the main cause of sin"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "W10-Q10",
+      "week": 10,
+      "weekTitle": "Building a New Identity",
+      "prompt": "Psychology can encourage “rewrite your story,” but the lesson says it cannot provide an unshakable identity because:",
+      "choices": [
+        "It usually anchors identity in self-will, achievement, or desire—things that can fail or be taken",
+        "It discourages responsibility and makes people blame their past",
+        "It focuses only on feelings and ignores actions",
+        "It denies that identity affects behavior"
       ],
       "correctIndex": 0
     },
     {
-      "id": "W7-Q37",
-      "week": 7,
-      "weekTitle": "Overcoming Anxiety and Fear",
-      "prompt": "Calling the Lord “the strength of my life” is explained as God being:",
+      "id": "W10-Q11",
+      "week": 10,
+      "weekTitle": "Building a New Identity",
+      "prompt": "The “integration” section agrees with psychology on what key point?",
       "choices": [
-        "A distant helper who steps in only after you do your part",
-        "A stronghold/fortress—the One holding your life together",
-        "A motivator who boosts confidence but doesn’t change outcomes",
-        "A principle of positivity you can activate with the right mindset"
+        "Identity shapes behavior, so changing identity changes choices",
+        "People can heal without community if they are disciplined enough",
+        "Shame is the best tool for long-term growth",
+        "The past must be forgotten or healing can’t happen"
       ],
-      "correctIndex": 1
+      "correctIndex": 0
     },
     {
-      "id": "W7-Q38",
-      "week": 7,
-      "weekTitle": "Overcoming Anxiety and Fear",
-      "prompt": "Which statement best reflects the lesson’s logic: “If the Lord is my salvation…”",
+      "id": "W10-Q12",
+      "week": 10,
+      "weekTitle": "Building a New Identity",
+      "prompt": "Which response best matches the lesson’s recommended way to fight a shame-lie like “You’re still the same”?",
       "choices": [
-        "Then I can ignore consequences and do what I want",
-        "Then no enemy gets to decide my destiny apart from God’s permission",
-        "Then I won’t need other believers in my life",
-        "Then I should never admit fear out loud"
-      ],
-      "correctIndex": 1
-    },
-    {
-      "id": "W7-Q39",
-      "week": 7,
-      "weekTitle": "Overcoming Anxiety and Fear",
-      "prompt": "According to the lesson, fear is not finally answered by:",
-      "choices": [
-        "Clarifying who God is and trusting Him personally",
-        "Pumping yourself up with self-confidence and toughness",
-        "Turning your eyes higher than the danger to God over it",
-        "Making David’s confession your own by faith"
-      ],
-      "correctIndex": 1
-    },
-    {
-      "id": "W7-Q40",
-      "week": 7,
-      "weekTitle": "Overcoming Anxiety and Fear",
-      "prompt": "The lesson says a man can quote verses and still be ruled by fear if he never learns to say:",
-      "choices": [
-        "“I will do better this time, no matter what”",
-        "“My circumstances will surely improve soon”",
-        "“He is mine, and I am His”",
-        "“People should respect me so I can calm down”"
+        "Ignore the thought and distract yourself until it fades",
+        "Argue with people so they stop reminding you of your past",
+        "Answer with Scripture-truth: old things passed away; I will not agree with that lie",
+        "Promise yourself you will never fail again"
       ],
       "correctIndex": 2
     },
     {
-      "id": "W7-Q41",
-      "week": 7,
-      "weekTitle": "Overcoming Anxiety and Fear",
-      "prompt": "From the psychological section, fear and anxiety are described first as:",
+      "id": "W10-Q13",
+      "week": 10,
+      "weekTitle": "Building a New Identity",
+      "prompt": "The lesson says the Christian life is not working your way into being new, but:",
       "choices": [
-        "Proof you are weak or “crazy”",
-        "A normal alarm system God designed for survival that can get stuck on",
-        "A sign you should isolate until you feel better",
-        "Evidence you don’t really love God"
-      ],
-      "correctIndex": 1
-    },
-    {
-      "id": "W7-Q42",
-      "week": 7,
-      "weekTitle": "Overcoming Anxiety and Fear",
-      "prompt": "Fight, flight, or freeze is mentioned to show that anxiety often involves:",
-      "choices": [
-        "A body response that treats imagined or remembered danger like present danger",
-        "A spiritual gift that only certain Christians have",
-        "A problem solved mainly by pretending nothing happened",
-        "A guarantee that you will make the best decision under pressure"
+        "Working out what is already true because God has made you new in Christ",
+        "Working until you feel new, then you can act new",
+        "Working to prove to people you’ve changed so God will accept you",
+        "Working to erase consequences so the past no longer matters"
       ],
       "correctIndex": 0
     },
     {
-      "id": "W7-Q43",
-      "week": 7,
-      "weekTitle": "Overcoming Anxiety and Fear",
-      "prompt": "In reentry, “hypervigilance” is described as:",
+      "id": "W10-Q14",
+      "week": 10,
+      "weekTitle": "Building a New Identity",
+      "prompt": "Which practical choice best fits “living from new identity” in the house?",
       "choices": [
-        "Getting bored because life feels too quiet",
-        "Constantly scanning for threats, waiting for disrespect or bad news",
-        "Refusing to ever think about the future",
-        "Being naturally fearless because you’ve “seen it all”"
+        "Doing chores only when someone is watching so you look consistent",
+        "Serving without being asked because you belong to Christ who served you",
+        "Avoiding responsibility so you don’t risk failure",
+        "Keeping your struggles private so you appear strong"
       ],
       "correctIndex": 1
     },
     {
-      "id": "W7-Q44",
-      "week": 7,
-      "weekTitle": "Overcoming Anxiety and Fear",
-      "prompt": "The lesson describes anxious “what if” thinking as:",
+      "id": "W10-Q15",
+      "week": 10,
+      "weekTitle": "Building a New Identity",
+      "prompt": "The lesson’s phrase “not a repaired version of the old you” is mainly teaching that God is:",
       "choices": [
-        "A helpful tool that always prepares you for the best outcome",
-        "The mind running worst-case scenarios on repeat while the body reacts as if it’s happening",
-        "A sin because questions are never allowed",
-        "A sign that your faith is fake in every case"
+        "Mostly improving your circumstances so you can restart life",
+        "Creating a new spiritual reality, not just polishing the old man",
+        "Helping you build a better public image than before",
+        "Making you immune to temptation once you mature"
       ],
       "correctIndex": 1
     },
     {
-      "id": "W7-Q45",
-      "week": 7,
-      "weekTitle": "Overcoming Anxiety and Fear",
-      "prompt": "Which is an example of fear “wearing a mask,” as described in the lesson?",
+      "id": "W10-Q16",
+      "week": 10,
+      "weekTitle": "Building a New Identity",
+      "prompt": "The “In Christ Confession” practice is described as:",
       "choices": [
-        "Quiet worry showing up as anger or intimidation on the surface",
-        "Confidence showing up as generosity and patience",
-        "Peace showing up as steadiness under pressure",
-        "Joy showing up as gratitude in hardship"
+        "Positive thinking that works if you say it with enough energy",
+        "Agreeing out loud with what God has said, even when feelings disagree",
+        "A ritual that replaces repentance and daily obedience",
+        "A way to prove your faith to others"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "W10-Q17",
+      "week": 10,
+      "weekTitle": "Building a New Identity",
+      "prompt": "The lesson warns that if you still believe “I am what I did,” pressure will likely produce:",
+      "choices": [
+        "More confidence because you know your limits",
+        "A drift back into the life that fits that belief",
+        "A desire to serve others to make up for the past",
+        "A deeper interest in theology and study"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "W10-Q18",
+      "week": 10,
+      "weekTitle": "Building a New Identity",
+      "prompt": "Which statement best captures the closing encouragement of Week 10?",
+      "choices": [
+        "Your identity rests on Christ’s finished work; when you fail, return to the cross and keep building",
+        "Once you claim a new identity, you should never feel like the old man again",
+        "Your identity becomes secure when others fully trust you",
+        "The program itself is what makes you new"
+      ],
+      "correctIndex": 0
+    },
+
+    {
+      "id": "W11-Q19",
+      "week": 11,
+      "weekTitle": "Fellowship and the Body",
+      "prompt": "The lesson’s main claim about fellowship is that it is:",
+      "choices": [
+        "An optional activity for believers who are extra serious",
+        "A core part of what it means to be joined to Christ and His people",
+        "Helpful mainly for networking and job opportunities",
+        "A substitute for personal prayer and Bible reading"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "W11-Q20",
+      "week": 11,
+      "weekTitle": "Fellowship and the Body",
+      "prompt": "Romans 12:4–5 is used to teach that believers are:",
+      "choices": [
+        "One body in Christ and members one of another",
+        "One body because they share similar backgrounds and values",
+        "One body if they attend the same meetings consistently",
+        "One body only after they prove long-term stability"
       ],
       "correctIndex": 0
     },
     {
-      "id": "W7-Q46",
-      "week": 7,
-      "weekTitle": "Overcoming Anxiety and Fear",
-      "prompt": "Past trauma is said to sometimes “wire” the brain to:",
+      "id": "W11-Q21",
+      "week": 11,
+      "weekTitle": "Fellowship and the Body",
+      "prompt": "In the lesson, “members one of another” means:",
       "choices": [
-        "Expect danger in relationships and react with anxiety when someone gets close",
-        "Become immune to fear forever",
-        "Forget painful memories completely once you join a program",
-        "Trust everyone automatically as a sign of healing"
+        "We should all have the same opinions to stay united",
+        "We belong to each other in a real spiritual way; what we do affects the body",
+        "We should keep relationships shallow to avoid conflict",
+        "We are responsible to control each other’s decisions"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "W11-Q22",
+      "week": 11,
+      "weekTitle": "Fellowship and the Body",
+      "prompt": "1 Corinthians 12 emphasizes that unity in the church is created primarily by:",
+      "choices": [
+        "Shared preferences and shared lifestyles",
+        "Strong leadership and strict rules",
+        "One Spirit placing believers into one body",
+        "Consistent meeting attendance over time"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "W11-Q23",
+      "week": 11,
+      "weekTitle": "Fellowship and the Body",
+      "prompt": "The lesson uses the body picture to correct which mindset most directly?",
+      "choices": [
+        "Both inferiority (“I don’t matter”) and independence (“I don’t need you”)",
+        "Only laziness and lack of motivation",
+        "Only doctrinal confusion about salvation",
+        "Only fear of speaking in public"
       ],
       "correctIndex": 0
     },
     {
-      "id": "W7-Q47",
-      "week": 7,
-      "weekTitle": "Overcoming Anxiety and Fear",
-      "prompt": "The lesson says people handle anxiety better when they have:",
+      "id": "W11-Q24",
+      "week": 11,
+      "weekTitle": "Fellowship and the Body",
+      "prompt": "Which statement best matches the lesson’s point about diversity in the body?",
       "choices": [
-        "Safe relationships, predictable routines, and healthy calming practices",
-        "More social media input and constant news updates",
-        "No rules so they can express themselves freely",
-        "Pressure to act tough so nobody sees weakness"
+        "Differences are a problem, so unity requires sameness",
+        "Differences exist by God’s design; the body needs many kinds of members to function",
+        "Differences are acceptable as long as nobody serves publicly",
+        "Differences matter mostly for personality, not spiritual life"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "W11-Q25",
+      "week": 11,
+      "weekTitle": "Fellowship and the Body",
+      "prompt": "When the lesson says “the eye cannot say to the hand, I have no need of thee,” it is mainly confronting:",
+      "choices": [
+        "Comparison that produces shame and withdrawal",
+        "Pride that produces independence and dismissal of others",
+        "Fear that produces silence in group settings",
+        "Immaturity that produces too many questions"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "W11-Q26",
+      "week": 11,
+      "weekTitle": "Fellowship and the Body",
+      "prompt": "According to the lesson, the “feeble” members being “necessary” teaches that:",
+      "choices": [
+        "Weakness is proof someone should step back from involvement",
+        "Every member matters; even those who seem small or weak have a necessary place",
+        "Only gifted members should be visible to keep the body strong",
+        "People with rough pasts should stay on the edges until they feel ready"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "W11-Q27",
+      "week": 11,
+      "weekTitle": "Fellowship and the Body",
+      "prompt": "The lesson describes real fellowship most closely as:",
+      "choices": [
+        "Shared burdens and shared joys—suffering together and rejoicing together",
+        "Attending the same services and keeping conversations polite",
+        "Agreeing to avoid hard topics so peace is maintained",
+        "Helping only when asked so boundaries stay clear"
       ],
       "correctIndex": 0
     },
     {
-      "id": "W7-Q48",
-      "week": 7,
-      "weekTitle": "Overcoming Anxiety and Fear",
-      "prompt": "Why does the lesson say psychological tools have limits?",
+      "id": "W11-Q28",
+      "week": 11,
+      "weekTitle": "Fellowship and the Body",
+      "prompt": "Psychologically, the lesson says men often struggle with fellowship because they learned:",
       "choices": [
-        "Because breathing and routines never help at all",
-        "Because they can’t answer the deepest question of control and ultimate safety",
-        "Because Christians should reject all insights about the body and mind",
-        "Because fear is always cured instantly if you try hard enough"
-      ],
-      "correctIndex": 1
-    },
-    {
-      "id": "W7-Q49",
-      "week": 7,
-      "weekTitle": "Overcoming Anxiety and Fear",
-      "prompt": "In the integration section, psychology mainly describes:",
-      "choices": [
-        "How anxiety affects body and mind",
-        "How to earn righteousness through discipline",
-        "How to interpret prophecies about the future",
-        "How to avoid all emotions as unspiritual"
+        "Trust is dangerous; caring leads to hurt, so distance feels safer",
+        "Group life is too boring to maintain long-term",
+        "Faith is mainly private and shouldn’t be shared",
+        "Accountability is unnecessary once a man prays"
       ],
       "correctIndex": 0
     },
     {
-      "id": "W7-Q50",
-      "week": 7,
-      "weekTitle": "Overcoming Anxiety and Fear",
-      "prompt": "In the integration section, theology adds which deeper test to anxious thoughts?",
+      "id": "W11-Q29",
+      "week": 11,
+      "weekTitle": "Fellowship and the Body",
+      "prompt": "From a recovery perspective, the lesson says community helps change largely because it provides:",
       "choices": [
-        "“Does this thought line up with who God is and what He has promised?”",
-        "“Does this thought make me feel strong and in control?”",
-        "“Will this thought keep people from correcting me?”",
-        "“Can I prove this thought is always true by my past?”"
+        "A place to be honest without being alone, accountability, examples, and opportunities to help others",
+        "A quick fix that eliminates temptation through social pressure",
+        "A way to earn acceptance from God through participation",
+        "A substitute for personal responsibility"
       ],
       "correctIndex": 0
     },
     {
-      "id": "W7-Q51",
-      "week": 7,
-      "weekTitle": "Overcoming Anxiety and Fear",
-      "prompt": "The lesson contrasts “reasonable thinking” with a deeper shift toward:",
+      "id": "W11-Q30",
+      "week": 11,
+      "weekTitle": "Fellowship and the Body",
+      "prompt": "The lesson describes “hyper-independence” (I don’t need anybody) as:",
       "choices": [
-        "Being more suspicious so you aren’t surprised",
-        "Man-centered thinking to God-centered thinking",
-        "Ignoring the body and focusing only on feelings",
-        "Letting fear decide quickly so you don’t hesitate"
+        "A mature sign that a man is ready to be released early",
+        "A survival strategy that increases relapse risk by cutting off healthy support",
+        "A spiritual discipline that protects a man from bad influences",
+        "A personality type that can’t be changed"
       ],
       "correctIndex": 1
     },
     {
-      "id": "W7-Q52",
-      "week": 7,
-      "weekTitle": "Overcoming Anxiety and Fear",
-      "prompt": "When fear rises in the house, the lesson recommends first learning to:",
+      "id": "W11-Q31",
+      "week": 11,
+      "weekTitle": "Fellowship and the Body",
+      "prompt": "In the integration section, theology strengthens the community idea by teaching that:",
       "choices": [
-        "Blame someone else so you feel justified",
-        "Pause, recognize what’s happening, and turn upward in prayer",
-        "Make a snap decision before anyone can challenge you",
-        "Withdraw completely so nobody can see weakness"
+        "God saves individuals but leaves community as an optional add-on",
+        "Belonging is rooted in Christ and the Spirit placing you into His body, not just social preference",
+        "Community works mainly because it increases motivation and self-esteem",
+        "The best fellowship is avoiding people who challenge you"
       ],
       "correctIndex": 1
     },
     {
-      "id": "W7-Q53",
-      "week": 7,
-      "weekTitle": "Overcoming Anxiety and Fear",
-      "prompt": "Which practice best matches the week’s application: “fear inventory”?",
+      "id": "W11-Q32",
+      "week": 11,
+      "weekTitle": "Fellowship and the Body",
+      "prompt": "The lesson says the program’s structure (shared living, group, worship, mentorship) is best understood as:",
       "choices": [
-        "Listing fears honestly, then pairing each one with Psalm 27:1 as a faith response",
-        "Listing fears to prove you have more problems than others",
-        "Listing fears so you can avoid anything uncomfortable this week",
-        "Listing fears and then trying to forget them immediately"
+        "A set of add-ons that help if you personally enjoy them",
+        "A strategy to keep men busy so they don’t relapse",
+        "An expression of a biblical reality: learning to live as members of one body",
+        "A replacement for personal conviction and prayer"
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "W11-Q33",
+      "week": 11,
+      "weekTitle": "Fellowship and the Body",
+      "prompt": "When fellowship exposes conflict and “rough edges,” the lesson’s best framing is:",
+      "choices": [
+        "Proof you don’t belong, so you should pull back to protect yourself",
+        "A training ground where the new man learns to listen, apologize, forgive, and work through issues",
+        "A sign leadership is failing and rules need to tighten",
+        "Evidence that community is too risky for most people"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "W11-Q34",
+      "week": 11,
+      "weekTitle": "Fellowship and the Body",
+      "prompt": "Which daily action most fits the lesson’s “One-Another Practice”?",
+      "choices": [
+        "Pick one brother daily and practice a simple one-another act: encourage, pray, bear burdens, forgive, or serve",
+        "Try to fix everyone’s problems so the house runs smoothly",
+        "Avoid weaker members so you don’t get pulled down",
+        "Stay quiet and focus only on your own growth this week"
       ],
       "correctIndex": 0
     },
     {
-      "id": "W7-Q54",
-      "week": 7,
-      "weekTitle": "Overcoming Anxiety and Fear",
-      "prompt": "Why does the lesson say the goal is not to “magically erase” fear?",
+      "id": "W11-Q35",
+      "week": 11,
+      "weekTitle": "Fellowship and the Body",
+      "prompt": "The lesson’s most direct warning about living the Christian life as a “solo project” is that:",
       "choices": [
-        "Because fear is always good and should be obeyed",
-        "Because the goal is connecting real anxieties to the real God who stands over them",
-        "Because Scripture has nothing to say about emotions",
-        "Because fear cannot change in any way"
-      ],
-      "correctIndex": 1
-    },
-    {
-      "id": "W7-Q55",
-      "week": 7,
-      "weekTitle": "Overcoming Anxiety and Fear",
-      "prompt": "If fear tends to come out as anger when you feel disrespected, the lesson’s suggested response is to:",
-      "choices": [
-        "Pause and pray before responding, choosing a different response because the Lord is your strength",
-        "Prove you’re not weak by escalating the conflict",
-        "Ignore the situation and pretend you don’t care",
-        "Keep the anger inside until it blows up later"
+        "You will likely drift back into old ways of thinking and living",
+        "You will lose your salvation over time",
+        "You will become too dependent on others to mature",
+        "You will stop needing discipline and structure"
       ],
       "correctIndex": 0
     },
     {
-      "id": "W7-Q56",
-      "week": 7,
-      "weekTitle": "Overcoming Anxiety and Fear",
-      "prompt": "The lesson says anxiety often shrinks when it is brought into:",
+      "id": "W11-Q36",
+      "week": 11,
+      "weekTitle": "Fellowship and the Body",
+      "prompt": "Which statement best matches the closing pastoral encouragement of Week 11?",
       "choices": [
-        "A private space where nobody can challenge you",
-        "The light of God’s Word and the support of God’s people",
-        "A loud argument so you can win the point",
-        "A constant distraction so you never have to think"
-      ],
-      "correctIndex": 1
-    },
-    {
-      "id": "W7-Q57",
-      "week": 7,
-      "weekTitle": "Overcoming Anxiety and Fear",
-      "prompt": "How does the lesson frame overcoming fear as part of discipleship?",
-      "choices": [
-        "It’s mainly a self-improvement project to earn respect",
-        "It trains you to steady others later, turning your story into a strengthening testimony",
-        "It proves you are naturally braver than other men",
-        "It removes your need for community because you become independent"
-      ],
-      "correctIndex": 1
-    },
-    {
-      "id": "W7-Q58",
-      "week": 7,
-      "weekTitle": "Overcoming Anxiety and Fear",
-      "prompt": "In the narrative assignment, personalizing Psalm 27:1 is meant to help you:",
-      "choices": [
-        "Treat the verse as poetry without practical use",
-        "Make God’s truth personal—moving from general ideas to lived confession",
-        "Show off your Bible knowledge to others",
-        "Replace prayer with journaling"
-      ],
-      "correctIndex": 1
-    },
-    {
-      "id": "W7-Q59",
-      "week": 7,
-      "weekTitle": "Overcoming Anxiety and Fear",
-      "prompt": "“Breathing Psalm 27:1” is described as:",
-      "choices": [
-        "A mystical chant to manipulate spiritual energy",
-        "A way to tie your breath to God’s Word so your body learns calm in response to Scripture",
-        "A substitute for trusting God in real situations",
-        "A technique that only works if you never feel fear at all"
-      ],
-      "correctIndex": 1
-    },
-    {
-      "id": "W7-Q60",
-      "week": 7,
-      "weekTitle": "Overcoming Anxiety and Fear",
-      "prompt": "Which summary best matches the closing encouragement of the lesson?",
-      "choices": [
-        "Fear disqualifies you from walking with God until you fix it",
-        "God is not surprised by your fear; He invites you to bring it to Him and learn where to run",
-        "The best way to beat fear is to become harder and more detached",
-        "If you struggle with fear, you should stay silent to avoid shame"
+        "Real fellowship is too risky, so keep relationships minimal and safe",
+        "God saved you into a body; don’t let conflict push you back into isolation—risk belonging under Christ",
+        "The goal is to become independent enough that community no longer matters",
+        "The body works best when only leaders carry burdens"
       ],
       "correctIndex": 1
     }
